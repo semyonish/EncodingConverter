@@ -26,8 +26,29 @@ class MainViewController: NSViewController {
     
     @IBOutlet weak var filesTableView: NSTableView!
     
-    private var files = [FileMetadata]()
+    private var openedFolderUrl = URL(fileURLWithPath: "/") {
+        didSet {
+            files = FileLoader().loadFiles(from: openedFolderUrl)
+        }
+    }
     
+    private var files = [FileMetadata]() {
+        didSet {
+            filesTableView.reloadData()
+        }
+    }
+    
+    @IBAction func openFolder(_ sender: Any) {
+        let folderDlg = NSOpenPanel()
+        folderDlg.canChooseDirectories = true
+        folderDlg.canChooseFiles = false;
+        
+        folderDlg.beginSheetModal(for: self.view.window!)
+        { (response) in
+            if response != NSApplication.ModalResponse.OK { return }
+            self.openedFolderUrl = folderDlg.url!
+        }
+    }
 }
 
 extension MainViewController: NSTableViewDataSource {
