@@ -32,15 +32,42 @@ class FileLoader {
                     continue
                 }
                 
+                let isDirectory = (file[URLResourceKey.isDirectoryKey] as? NSNumber)?.boolValue ?? false
+                
+                let encoding = !isDirectory ? getEncoding(of: fileUrl) : "folder"
+                
+                
                 files.append(FileMetadata(name: file[URLResourceKey.localizedNameKey] as? String ?? "",
                                            icon: file[URLResourceKey.effectiveIconKey] as? NSImage  ?? NSImage(),
                                            color: NSColor(),
-                                           isDirectory: (file[URLResourceKey.isDirectoryKey] as? NSNumber)?.boolValue ?? false,
+                                           isDirectory: isDirectory,
                                            url: fileUrl,
-                                           encoding: "UTF????"))
+                                           encoding: encoding))
             }
         }
         
         return files
+    }
+    
+    private func getEncoding(of fileURL: URL) -> String {
+        var resultEncoding = String.Encoding.ascii
+        
+        do {
+            _ = try String.init(contentsOf: fileURL, usedEncoding: &resultEncoding)
+            
+            if resultEncoding == .utf8 {
+                let data = try Data(contentsOf: fileURL)
+                let BOM = "\u{FEFF}".data(using: .utf8)
+                if data.prefix(3) == BOM {
+                    return String.Encoding.utf8.description + "(with BOM)"
+                }
+            }
+            
+        } catch {
+            print("error checking encoding \(fileURL)")
+            return "not found (maybe Windows)"
+        }
+        
+        return resultEncoding.description
     }
 }

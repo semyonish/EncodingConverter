@@ -68,7 +68,7 @@ extension MainViewController: NSTableViewDelegate {
         else if tableColumn == filesTableView.tableColumns[1]
         {
             let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.EncodingCell, owner: nil) as? NSTableCellView
-            cellView?.textField?.stringValue = files[row].isDirectory.description
+            cellView?.textField?.stringValue = files[row].encoding
             return cellView
         }
         
