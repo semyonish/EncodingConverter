@@ -22,6 +22,17 @@ class FileEncoder {
         }
     }
     
+    static func encode(file: URL, to newEncoding: FileEncoding) {
+        let oldEncoding = getEncoding(of: file)
+        if oldEncoding.encoding == .utf8
+            && oldEncoding.bom == false
+            && newEncoding.encoding == .utf8
+            && newEncoding.bom == true
+        {
+            addBom(to: file)
+        }
+    }
+    
     static private let BOM = "\u{FEFF}".data(using: .utf8)
     
     static private func findBOM(in file: URL) -> Bool {
@@ -30,6 +41,14 @@ class FileEncoder {
         }
         
         return data.prefix(3) == BOM
+    }
+    
+    static private func addBom(to file: URL)
+    {
+        let fileData = try! Data(contentsOf: file)
+        var resultData = BOM
+        resultData?.append(fileData)
+        try! resultData?.write(to: file)
     }
 }
 
@@ -44,5 +63,10 @@ struct FileEncoding {
             result += " (with BOM)"
         }
         return result
+    }
+    
+    init(encoding: String.Encoding?, bom: Bool) {
+        self.encoding = encoding
+        self.bom = (encoding == .utf8) ? bom : false;
     }
 }

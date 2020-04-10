@@ -28,7 +28,7 @@ class MainViewController: NSViewController {
     
     private var openedFolderUrl = URL(fileURLWithPath: "/") {
         didSet {
-            files = FileLoader().loadFiles(from: openedFolderUrl)
+            refreshFiles()
         }
     }
     
@@ -48,6 +48,19 @@ class MainViewController: NSViewController {
             if response != NSApplication.ModalResponse.OK { return }
             self.openedFolderUrl = folderDlg.url!
         }
+    }
+    
+    @IBAction func encodeToUTF8BOM(_ sender: Any) {
+        let indices = filesTableView.selectedRowIndexes
+        for index in indices {
+            FileEncoder.encode(file: files[index].url, to: FileEncoding(encoding: .utf8, bom: true))
+        }
+        
+        refreshFiles()
+    }
+    
+    private func refreshFiles() {
+        files = FileLoader().loadFiles(from: openedFolderUrl)
     }
 }
 
