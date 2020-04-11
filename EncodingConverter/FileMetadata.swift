@@ -14,9 +14,9 @@ struct FileMetadata {
     let color: NSColor
     let isDirectory: Bool
     let url: URL
-    var encoding: FileEncoding? // у папок нет кодировки
+    var encoding: FileEncoding // у папок нет кодировки
     
     var encodingDescription: String {
-        return isDirectory ? "folder" : (encoding?.description ?? "not found")
+        return isDirectory ? "folder" : encoding.rawValue
     }
 }

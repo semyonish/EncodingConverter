@@ -9,12 +9,6 @@
 import Cocoa
 
 class MainViewController: NSViewController {
-
-    fileprivate enum CellIdentifiers {
-        static let NameCell = NSUserInterfaceItemIdentifier("NameCellId")
-        static let EncodingCell = NSUserInterfaceItemIdentifier("EncodingCellId")
-        static let ConvertStatus = NSUserInterfaceItemIdentifier("ConvertStatusCellId")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,29 +19,11 @@ class MainViewController: NSViewController {
         filesTableView.delegate = self
     }
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var filesTableView: NSTableView!
     
-    private var openedFolderUrl = URL(fileURLWithPath: "/") {
-        didSet {
-            reloadFiles()
-        }
-    }
-    
-    private var files = [FileMetadata]() {
-        didSet {
-            filesTableView.reloadData()
-        }
-    }
-    
-    enum ConvertStatus: String {
-        case Converted = "OK"
-        case Error = "Failed"
-        case NotSelected = ""
-    }
-    
-    // если конвертация прошла успешно, то true
-    private var convertStatuses = [ConvertStatus]()
-    
+    // MARK: - Toolbar buttons handlers
     
     @IBAction func openFolder(_ sender: Any) {
         let folderDlg = NSOpenPanel()
@@ -69,13 +45,45 @@ class MainViewController: NSViewController {
         let indices = filesTableView.selectedRowIndexes
         for index in indices {
             convertStatuses[index] =
-                FileEncoder.encode(file: files[index].url, to: FileEncoding(encoding: .utf8, bom: true))
+                FileEncoder.encode(file: files[index].url, to: .utf8withBOM)
                 ? ConvertStatus.Converted
                 : ConvertStatus.Error
         }
         
         refreshEncodings()
     }
+    
+    // MARK: - Internal data types
+    
+    fileprivate enum CellIdentifiers {
+        static let NameCell = NSUserInterfaceItemIdentifier("NameCellId")
+        static let EncodingCell = NSUserInterfaceItemIdentifier("EncodingCellId")
+        static let ConvertStatus = NSUserInterfaceItemIdentifier("ConvertStatusCellId")
+    }
+    
+    fileprivate enum ConvertStatus: String {
+        case Converted = "OK"
+        case Error = "Failed"
+        case NotSelected = ""
+    }
+    
+    // MARK: - Model objects
+    
+    private var openedFolderUrl = URL(fileURLWithPath: "/") {
+        didSet {
+            reloadFiles()
+        }
+    }
+    
+    private var files = [FileMetadata]() {
+        didSet {
+            filesTableView.reloadData()
+        }
+    }
+    
+    private var convertStatuses = [ConvertStatus]()
+    
+    // MARK: - Private methods
     
     private func reloadFiles() {
         files = FileLoader.loadFiles(from: openedFolderUrl)
@@ -85,6 +93,7 @@ class MainViewController: NSViewController {
     private func refreshEncodings() {
         files = FileLoader.refreshEncdoings(files: files)
     }
+    
 }
 
 extension MainViewController: NSTableViewDataSource {

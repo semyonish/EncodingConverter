@@ -32,12 +32,13 @@ class FileLoader {
                     continue
                 }
                 
+                let name = file[URLResourceKey.localizedNameKey] as? String ?? ""
+                let icon = file[URLResourceKey.effectiveIconKey] as? NSImage  ?? NSImage()
                 let isDirectory = (file[URLResourceKey.isDirectoryKey] as? NSNumber)?.boolValue ?? false
-                let encoding = !isDirectory ? FileEncoder.getEncoding(of: fileUrl) : nil
+                let encoding = FileEncoder.getEncoding(of: fileUrl)
                 
-                
-                files.append(FileMetadata(name: file[URLResourceKey.localizedNameKey] as? String ?? "",
-                                           icon: file[URLResourceKey.effectiveIconKey] as? NSImage  ?? NSImage(),
+                files.append(FileMetadata(name: name,
+                                           icon: icon,
                                            color: NSColor(),
                                            isDirectory: isDirectory,
                                            url: fileUrl,
