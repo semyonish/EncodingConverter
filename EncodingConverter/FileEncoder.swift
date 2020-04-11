@@ -22,14 +22,17 @@ class FileEncoder {
         }
     }
     
-    static func encode(file: URL, to newEncoding: FileEncoding) {
+    static func encode(file: URL, to newEncoding: FileEncoding) -> Bool {
         let oldEncoding = getEncoding(of: file)
         if oldEncoding.encoding == .utf8
             && oldEncoding.bom == false
             && newEncoding.encoding == .utf8
             && newEncoding.bom == true
         {
-            addBom(to: file)
+            return addBom(to: file)
+        }
+        else {
+            return false
         }
     }
     
@@ -43,12 +46,20 @@ class FileEncoder {
         return data.prefix(3) == BOM
     }
     
-    static private func addBom(to file: URL)
+    static private func addBom(to file: URL) -> Bool
     {
-        let fileData = try! Data(contentsOf: file)
-        var resultData = BOM
-        resultData?.append(fileData)
-        try! resultData?.write(to: file)
+        do
+        {
+            let fileData = try Data(contentsOf: file)
+            var resultData = BOM
+            resultData?.append(fileData)
+            try resultData?.write(to: file)
+            return true
+        }
+        catch
+        {
+            return false
+        }
     }
 }
 

@@ -13,12 +13,13 @@ class MainViewController: NSViewController {
     fileprivate enum CellIdentifiers {
         static let NameCell = NSUserInterfaceItemIdentifier("NameCellId")
         static let EncodingCell = NSUserInterfaceItemIdentifier("EncodingCellId")
+        static let ConvertStatus = NSUserInterfaceItemIdentifier("ConvertStatusCellId")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        files = FileLoader().loadFiles(from: URL(fileURLWithPath: "/"))
+        reloadFiles()
         
         filesTableView.dataSource = self
         filesTableView.delegate = self
@@ -28,7 +29,7 @@ class MainViewController: NSViewController {
     
     private var openedFolderUrl = URL(fileURLWithPath: "/") {
         didSet {
-            refreshFiles()
+            reloadFiles()
         }
     }
     
@@ -37,6 +38,16 @@ class MainViewController: NSViewController {
             filesTableView.reloadData()
         }
     }
+    
+    enum ConvertStatus: String {
+        case Converted = "OK"
+        case Error = "Failed"
+        case NotSelected = ""
+    }
+    
+    // если конвертация прошла успешно, то true
+    private var convertStatuses = [ConvertStatus]()
+    
     
     @IBAction func openFolder(_ sender: Any) {
         let folderDlg = NSOpenPanel()
@@ -50,17 +61,29 @@ class MainViewController: NSViewController {
         }
     }
     
+    @IBAction func refreshFolder(_ sender: Any) {
+        reloadFiles()
+    }
+    
     @IBAction func encodeToUTF8BOM(_ sender: Any) {
         let indices = filesTableView.selectedRowIndexes
         for index in indices {
-            FileEncoder.encode(file: files[index].url, to: FileEncoding(encoding: .utf8, bom: true))
+            convertStatuses[index] =
+                FileEncoder.encode(file: files[index].url, to: FileEncoding(encoding: .utf8, bom: true))
+                ? ConvertStatus.Converted
+                : ConvertStatus.Error
         }
         
-        refreshFiles()
+        refreshEncodings()
     }
     
-    private func refreshFiles() {
-        files = FileLoader().loadFiles(from: openedFolderUrl)
+    private func reloadFiles() {
+        files = FileLoader.loadFiles(from: openedFolderUrl)
+        convertStatuses = Array.init(repeating: ConvertStatus.NotSelected, count: files.count)
+    }
+    
+    private func refreshEncodings() {
+        files = FileLoader.refreshEncdoings(files: files)
     }
 }
 
@@ -72,16 +95,20 @@ extension MainViewController: NSTableViewDataSource {
 
 extension MainViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if tableColumn == filesTableView.tableColumns[0] {
+        if tableColumn == filesTableView.tableColumns[0] { // name
             let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.NameCell, owner: nil) as? NSTableCellView
             cellView?.textField?.stringValue = files[row].name
             cellView?.imageView?.image = files[row].icon
             return cellView
         }
-        else if tableColumn == filesTableView.tableColumns[1]
-        {
+        else if tableColumn == filesTableView.tableColumns[1] { // encoding
             let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.EncodingCell, owner: nil) as? NSTableCellView
             cellView?.textField?.stringValue = files[row].encodingDescription
+            return cellView
+        }
+        else if tableColumn == filesTableView.tableColumns[2] { // convert status
+            let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.ConvertStatus, owner: nil) as? NSTableCellView
+            cellView?.textField?.stringValue = convertStatuses[row].rawValue
             return cellView
         }
         

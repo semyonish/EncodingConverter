@@ -10,7 +10,7 @@ import AppKit
 
 class FileLoader {
     
-    func loadFiles(from folder: URL) -> [FileMetadata] {
+    static func loadFiles(from folder: URL) -> [FileMetadata] {
         var files = [FileMetadata]()
         
         let requiredAttributes = [URLResourceKey.localizedNameKey,
@@ -46,5 +46,13 @@ class FileLoader {
         }
         
         return files
+    }
+    
+    static func refreshEncdoings(files:[FileMetadata]) -> [FileMetadata] {
+        return files.map { file in
+            var newFile = file
+            newFile.encoding = FileEncoder.getEncoding(of: file.url)
+            return newFile
+        }
     }
 }
