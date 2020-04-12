@@ -17,6 +17,8 @@ class MainViewController: NSViewController {
         
         filesTableView.dataSource = self
         filesTableView.delegate = self
+        
+        filesTableView.doubleAction = #selector(self.tableViewDoubleClick)
     }
     
     // MARK: - Outlets
@@ -113,6 +115,16 @@ extension MainViewController: NSTableViewDataSource {
 }
 
 extension MainViewController: NSTableViewDelegate {
+    
+    // not delegate method
+    // handler for double click on file
+    @objc func tableViewDoubleClick(_ sender: AnyObject) {
+        let clickedFile = files[filesTableView.selectedRow]
+        if clickedFile.isDirectory {
+            openedFolderUrl = clickedFile.url
+        }
+    }
+    
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         if tableColumn == filesTableView.tableColumns[0] { // name
             let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.NameCell, owner: nil) as? NSTableCellView
