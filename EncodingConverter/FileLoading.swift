@@ -14,11 +14,21 @@ struct FileMetadata {
     let color: NSColor
     let isDirectory: Bool
     let url: URL
+    let modificationDate: Date
     var encoding: FileEncoding
     
     var encodingDescription: String {
         return isDirectory ? "folder" : encoding.rawValue
     }
+}
+
+enum FileMetadataOrderKey: String {
+    case name
+    case modificationDate
+}
+
+public func itemCompare<T: Comparable>(lhs: T, rhs: T, ascending: Bool) -> Bool {
+    return ascending ? (lhs < rhs) : (rhs < lhs)
 }
 
 class FileLoader {
@@ -30,7 +40,8 @@ class FileLoader {
                                   URLResourceKey.effectiveIconKey,
                                   URLResourceKey.typeIdentifierKey,
                                   URLResourceKey.isDirectoryKey,
-                                  URLResourceKey.isPackageKey]
+                                  URLResourceKey.isPackageKey,
+                                  URLResourceKey.contentModificationDateKey]
         
         if let enumerator = FileManager.default.enumerator(at: folder,
                                                            includingPropertiesForKeys: requiredAttributes,
@@ -48,6 +59,7 @@ class FileLoader {
                 let name = file[URLResourceKey.localizedNameKey] as? String ?? ""
                 let icon = file[URLResourceKey.effectiveIconKey] as? NSImage  ?? NSImage()
                 let isDirectory = (file[URLResourceKey.isDirectoryKey] as? NSNumber)?.boolValue ?? false
+                let modificationDate = file[URLResourceKey.contentModificationDateKey] as? Date ?? Date.distantPast
                 let encoding = FileEncoder.getEncoding(of: fileUrl)
                 
                 files.append(FileMetadata(name: name,
@@ -55,6 +67,7 @@ class FileLoader {
                                            color: NSColor(),
                                            isDirectory: isDirectory,
                                            url: fileUrl,
+                                           modificationDate: modificationDate,
                                            encoding: encoding))
             }
         }

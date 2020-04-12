@@ -13,12 +13,8 @@ class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureTableView()
         reloadFiles()
-        
-        filesTableView.dataSource = self
-        filesTableView.delegate = self
-        
-        filesTableView.doubleAction = #selector(self.tableViewDoubleClick)
     }
     
     // MARK: - Outlets
@@ -68,6 +64,7 @@ class MainViewController: NSViewController {
     fileprivate enum CellIdentifiers {
         static let NameCell = NSUserInterfaceItemIdentifier("NameCellId")
         static let EncodingCell = NSUserInterfaceItemIdentifier("EncodingCellId")
+        static let ModificationDateCell = NSUserInterfaceItemIdentifier("ModificationDateCellId")
         static let ConvertStatus = NSUserInterfaceItemIdentifier("ConvertStatusCellId")
     }
     
@@ -77,7 +74,7 @@ class MainViewController: NSViewController {
         case NotSelected = ""
     }
     
-    // MARK: - Model objects
+    // MARK: - private fields
     
     private var openedFolderUrl = URL(fileURLWithPath: "/") {
         didSet {
@@ -85,25 +82,55 @@ class MainViewController: NSViewController {
         }
     }
     
-    private var files = [FileMetadata]() {
+    private var files = [FileMetadata]()
+    
+    private var targetEncoding: FileEncoding?
+    
+    private var convertStatuses = [ConvertStatus]() {
         didSet {
             filesTableView.reloadData()
         }
     }
     
-    private var targetEncoding: FileEncoding?
-    
-    private var convertStatuses = [ConvertStatus]()
+    private var sortKeySelected = FileMetadataOrderKey.name
+    private var sortAscending = false
     
     // MARK: - Private methods
     
+    private func configureTableView() {
+        filesTableView.dataSource = self
+        filesTableView.delegate = self
+        
+        filesTableView.doubleAction = #selector(self.tableViewDoubleClick)
+        
+        filesTableView.tableColumns[0].sortDescriptorPrototype = NSSortDescriptor(key: FileMetadataOrderKey.name.rawValue, ascending: true)
+        filesTableView.tableColumns[2].sortDescriptorPrototype = NSSortDescriptor(key: FileMetadataOrderKey.modificationDate.rawValue, ascending: false)
+    }
+    
     private func reloadFiles() {
         files = FileLoader.loadFiles(from: openedFolderUrl)
-        convertStatuses = Array.init(repeating: ConvertStatus.NotSelected, count: files.count)
+        sortFiles()
+        
+        resetConvertStatuses()
     }
     
     private func refreshEncodings() {
         files = FileLoader.refreshEncdoings(files: files)
+    }
+    
+    private func sortFiles() {
+        switch sortKeySelected {
+        case .name:
+            files.sort { itemCompare(lhs: $0.name, rhs: $1.name, ascending: sortAscending) }
+        case .modificationDate:
+            files.sort { itemCompare(lhs: $0.modificationDate, rhs: $1.modificationDate, ascending: sortAscending) }
+        }
+        
+        resetConvertStatuses()
+    }
+    
+    private func resetConvertStatuses() {
+        convertStatuses = Array.init(repeating: ConvertStatus.NotSelected, count: files.count)
     }
     
 }
@@ -112,6 +139,18 @@ extension MainViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return files.count
     }
+    
+    func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
+        guard let sortDescriptor = filesTableView.sortDescriptors.first else {
+            return
+        }
+        
+        if let sortKey = FileMetadataOrderKey(rawValue: sortDescriptor.key ?? "") {
+            sortKeySelected = sortKey
+            sortAscending = sortDescriptor.ascending
+            sortFiles()
+        }
+    }
 }
 
 extension MainViewController: NSTableViewDelegate {
@@ -119,6 +158,10 @@ extension MainViewController: NSTableViewDelegate {
     // not delegate method
     // handler for double click on file
     @objc func tableViewDoubleClick(_ sender: AnyObject) {
+        if filesTableView.selectedRow < 0 {
+            return
+        }
+        
         let clickedFile = files[filesTableView.selectedRow]
         if clickedFile.isDirectory {
             openedFolderUrl = clickedFile.url
@@ -137,7 +180,17 @@ extension MainViewController: NSTableViewDelegate {
             cellView?.textField?.stringValue = files[row].encodingDescription
             return cellView
         }
-        else if tableColumn == filesTableView.tableColumns[2] { // convert status
+        else if tableColumn == filesTableView.tableColumns[2] { // modification date
+            let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.ConvertStatus, owner: nil) as? NSTableCellView
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            dateFormatter.timeStyle = .short
+            
+            cellView?.textField?.stringValue = dateFormatter.string(from: files[row].modificationDate)
+            return cellView
+        }
+        else if tableColumn == filesTableView.tableColumns[3] { // convert status
             let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.ConvertStatus, owner: nil) as? NSTableCellView
             cellView?.textField?.stringValue = convertStatuses[row].rawValue
             return cellView
