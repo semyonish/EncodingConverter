@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -86,7 +87,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
                         <toolbar key="toolbar" implicitIdentifier="FCD10698-C507-4A3A-B99B-AF7B8C13E256" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="EtE-5K-yRS">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="huX-Jb-QCV"/>
@@ -112,12 +113,25 @@
                                         <action selector="refreshFolder:" target="Oky-zY-oP4" id="ETZ-jz-xlb"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="370544C1-64AA-4D02-913F-82855C78EF99" label="Target Encoding" paletteLabel="Target Encoding" sizingBehavior="auto" id="icN-TK-e8q">
+                                    <nil key="toolTip"/>
+                                    <popUpButton key="view" verticalHuggingPriority="750" id="kiN-BB-Bya" customClass="TargetEncodingPopUpButton" customModule="EncodingConverter" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="14" width="100" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <popUpButtonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7H8-dI-4wK">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <menu key="menu" id="jCe-YV-6XF"/>
+                                        </popUpButtonCell>
+                                    </popUpButton>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="vIA-zF-e2I"/>
                                 <toolbarItem reference="IsR-zV-5Bi"/>
                                 <toolbarItem reference="huX-Jb-QCV"/>
                                 <toolbarItem reference="huX-Jb-QCV"/>
+                                <toolbarItem reference="icN-TK-e8q"/>
                                 <toolbarItem reference="HtC-Xp-fWg"/>
                             </defaultToolbarItems>
                         </toolbar>

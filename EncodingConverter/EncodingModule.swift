@@ -36,7 +36,7 @@ class FileEncoder {
 
             return FileEncoding(stringEncoding: stringEncoding, bom: findBOM(in: fileURL))
         } catch {
-            print("error checking encoding \(fileURL)")
+            print("FileEncoder.getENcoding error checking encoding \(fileURL)")
             return FileEncoding.identificationError
         }
     }
@@ -77,6 +77,10 @@ class FileEncoder {
         {
             let fileData = try Data(contentsOf: file)
             
+            if findBom(in: fileData) {
+                return false
+            }
+            
             var resultData = BOM
             resultData?.append(fileData)
             
@@ -99,7 +103,8 @@ class FileEncoder {
                 return false;
             }
             
-            let resultData = fileData.suffix(from: 3)
+            let indexAfterBOM = fileData.startIndex + 3
+            let resultData = fileData.suffix(from: indexAfterBOM)
             
             try resultData.write(to: file)
             

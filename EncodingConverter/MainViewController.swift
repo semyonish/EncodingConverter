@@ -41,11 +41,19 @@ class MainViewController: NSViewController {
         reloadFiles()
     }
     
+    @objc func targetEncodingSelected(sender: NSMenuItem) {
+        targetEncoding = FileEncoding.init(rawValue: sender.title)
+    }
+    
     @IBAction func encodeToUTF8BOM(_ sender: Any) {
+        guard let targetEncoding = targetEncoding else {
+            return
+        }
+        
         let indices = filesTableView.selectedRowIndexes
         for index in indices {
             convertStatuses[index] =
-                FileEncoder.encode(file: files[index].url, to: .utf8withBOM)
+                FileEncoder.encode(file: files[index].url, to: targetEncoding)
                 ? ConvertStatus.Converted
                 : ConvertStatus.Error
         }
@@ -80,6 +88,8 @@ class MainViewController: NSViewController {
             filesTableView.reloadData()
         }
     }
+    
+    private var targetEncoding: FileEncoding?
     
     private var convertStatuses = [ConvertStatus]()
     
