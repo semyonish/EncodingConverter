@@ -14,8 +14,7 @@
 		C1BD97C72434F77C00DA0708 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1BD97C52434F77C00DA0708 /* Main.storyboard */; };
 		C1BD97D12434FC3700DA0708 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD97CF2434FC3700DA0708 /* MainViewController.swift */; };
 		C1BD97D22434FC3700DA0708 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1BD97D02434FC3700DA0708 /* MainViewController.xib */; };
-		C1BD97D4243511C800DA0708 /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD97D3243511C800DA0708 /* FileLoader.swift */; };
-		C1BD97D6243512BA00DA0708 /* FileMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD97D5243512BA00DA0708 /* FileMetadata.swift */; };
+		C1BD97D4243511C800DA0708 /* FileLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD97D3243511C800DA0708 /* FileLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +28,7 @@
 		C1BD97C92434F77C00DA0708 /* EncodingConverter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EncodingConverter.entitlements; sourceTree = "<group>"; };
 		C1BD97CF2434FC3700DA0708 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C1BD97D02434FC3700DA0708 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		C1BD97D3243511C800DA0708 /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
-		C1BD97D5243512BA00DA0708 /* FileMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMetadata.swift; sourceTree = "<group>"; };
+		C1BD97D3243511C800DA0708 /* FileLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +68,7 @@
 				C1BD97C92434F77C00DA0708 /* EncodingConverter.entitlements */,
 				C1BD97CF2434FC3700DA0708 /* MainViewController.swift */,
 				C1BD97D02434FC3700DA0708 /* MainViewController.xib */,
-				C1BD97D3243511C800DA0708 /* FileLoader.swift */,
-				C1BD97D5243512BA00DA0708 /* FileMetadata.swift */,
+				C1BD97D3243511C800DA0708 /* FileLoading.swift */,
 				C13EA5FD243B7C3F0008E120 /* EncodingModule.swift */,
 				C1735184244328CF003F5C97 /* TargetEncodingPopUpButton.swift */,
 			);
@@ -149,10 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1BD97D4243511C800DA0708 /* FileLoader.swift in Sources */,
+				C1BD97D4243511C800DA0708 /* FileLoading.swift in Sources */,
 				C1BD97C02434F77A00DA0708 /* AppDelegate.swift in Sources */,
 				C1735185244328CF003F5C97 /* TargetEncodingPopUpButton.swift in Sources */,
-				C1BD97D6243512BA00DA0708 /* FileMetadata.swift in Sources */,
 				C13EA5FE243B7C3F0008E120 /* EncodingModule.swift in Sources */,
 				C1BD97D12434FC3700DA0708 /* MainViewController.swift in Sources */,
 			);
