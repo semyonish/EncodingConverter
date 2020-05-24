@@ -19,7 +19,7 @@ class FileEncoder {
             var stringEncoding = String.Encoding.utf8
             _ = try String.init(contentsOf: fileURL, usedEncoding: &stringEncoding)
 
-            return FileEncoding(stringEncoding: stringEncoding, bom: findBOM(in: fileURL))
+            return FileEncoding(stringEncoding: stringEncoding, bom: BOMProcessor.findBOM(in: fileURL))
         } catch {
             print("FileEncoder.getENcoding error checking encoding \(fileURL)")
             return FileEncoding.identificationError
@@ -31,73 +31,13 @@ class FileEncoder {
         
         switch (oldEncoding, newEncoding) {
         case (.utf8, .utf8withBOM):
-            return addBom(to: file)
+            return BOMProcessor.addBom(to: file)
         case (.utf8withBOM, .utf8):
-            return removeBOM(from: file)
+            return BOMProcessor.removeBOM(from: file)
         default:
             print("FileEncoder.encode failed call with oldEnc = \(oldEncoding.rawValue), newEnc = \(newEncoding.rawValue)")
             return false
         }
     }
-    
-    //MARK: - BOM processing
-    
-    static private let BOM = "\u{FEFF}".data(using: .utf8)
-    
-    static private func findBOM(in file: URL) -> Bool {
-        guard let data = try? Data(contentsOf: file) else {
-            return false
-        }
-        
-        return findBom(in: data)
-    }
-    
-    static private func findBom(in data: Data) -> Bool {
-        return data.count >= 3 && data.prefix(3) == BOM
-    }
-    
-    static private func addBom(to file: URL) -> Bool
-    {
-        do
-        {
-            let fileData = try Data(contentsOf: file)
-            
-            if findBom(in: fileData) {
-                return false
-            }
-            
-            var resultData = BOM
-            resultData?.append(fileData)
-            
-            try resultData?.write(to: file)
-            
-            return true
-        }
-        catch
-        {
-            return false
-        }
-    }
-    
-    static private func removeBOM(from file: URL) -> Bool {
-        do
-        {
-            let fileData = try Data(contentsOf: file)
-            
-            if !findBom(in: fileData) {
-                return false;
-            }
-            
-            let indexAfterBOM = fileData.startIndex + 3
-            let resultData = fileData.suffix(from: indexAfterBOM)
-            
-            try resultData.write(to: file)
-            
-            return true
-        }
-        catch
-        {
-            return false
-        }
-    }
+
 }

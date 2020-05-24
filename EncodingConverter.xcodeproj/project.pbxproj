@@ -18,7 +18,20 @@
 		C1F1302C247A83B50069874C /* FilesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1302A247A83B50069874C /* FilesModel.swift */; };
 		C1F1302E247A956F0069874C /* FileEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1302D247A956F0069874C /* FileEncoding.swift */; };
 		C1F13030247AA30E0069874C /* FileMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1302F247AA30E0069874C /* FileMetadata.swift */; };
+		C1F13032247AA57F0069874C /* BOMProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F13031247AA57F0069874C /* BOMProcessor.swift */; };
+		C1F1303A247AA6FA0069874C /* EncodingConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F13039247AA6FA0069874C /* EncodingConverterTests.swift */; };
+		C1F13042247AA7340069874C /* BOMProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F13041247AA7340069874C /* BOMProcessingTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C1F1303C247AA6FA0069874C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1BD97B42434F77A00DA0708 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1BD97BB2434F77A00DA0708;
+			remoteInfo = EncodingConverter;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		C13EA5FD243B7C3F0008E120 /* EncodingModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingModule.swift; sourceTree = "<group>"; };
@@ -35,10 +48,22 @@
 		C1F1302A247A83B50069874C /* FilesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesModel.swift; sourceTree = "<group>"; };
 		C1F1302D247A956F0069874C /* FileEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileEncoding.swift; sourceTree = "<group>"; };
 		C1F1302F247AA30E0069874C /* FileMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileMetadata.swift; sourceTree = "<group>"; };
+		C1F13031247AA57F0069874C /* BOMProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOMProcessor.swift; sourceTree = "<group>"; };
+		C1F13037247AA6FA0069874C /* EncodingConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EncodingConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1F13039247AA6FA0069874C /* EncodingConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingConverterTests.swift; sourceTree = "<group>"; };
+		C1F1303B247AA6FA0069874C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1F13041247AA7340069874C /* BOMProcessingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOMProcessingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C1BD97B92434F77A00DA0708 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1F13034247AA6FA0069874C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				C1BD97BE2434F77A00DA0708 /* EncodingConverter */,
+				C1F13038247AA6FA0069874C /* EncodingConverterTests */,
 				C1BD97BD2434F77A00DA0708 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				C1BD97BC2434F77A00DA0708 /* EncodingConverter.app */,
+				C1F13037247AA6FA0069874C /* EncodingConverterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,8 +107,19 @@
 				C1BD97CF2434FC3700DA0708 /* MainViewController.swift */,
 				C1BD97D02434FC3700DA0708 /* MainViewController.xib */,
 				C1735184244328CF003F5C97 /* TargetEncodingPopUpButton.swift */,
+				C1F13031247AA57F0069874C /* BOMProcessor.swift */,
 			);
 			path = EncodingConverter;
+			sourceTree = "<group>";
+		};
+		C1F13038247AA6FA0069874C /* EncodingConverterTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1F13041247AA7340069874C /* BOMProcessingTests.swift */,
+				C1F13039247AA6FA0069874C /* EncodingConverterTests.swift */,
+				C1F1303B247AA6FA0069874C /* Info.plist */,
+			);
+			path = EncodingConverterTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,6 +142,24 @@
 			productReference = C1BD97BC2434F77A00DA0708 /* EncodingConverter.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C1F13036247AA6FA0069874C /* EncodingConverterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1F1303E247AA6FA0069874C /* Build configuration list for PBXNativeTarget "EncodingConverterTests" */;
+			buildPhases = (
+				C1F13033247AA6FA0069874C /* Sources */,
+				C1F13034247AA6FA0069874C /* Frameworks */,
+				C1F13035247AA6FA0069874C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1F1303D247AA6FA0069874C /* PBXTargetDependency */,
+			);
+			name = EncodingConverterTests;
+			productName = EncodingConverterTests;
+			productReference = C1F13037247AA6FA0069874C /* EncodingConverterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -116,6 +172,10 @@
 				TargetAttributes = {
 					C1BD97BB2434F77A00DA0708 = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					C1F13036247AA6FA0069874C = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = C1BD97BB2434F77A00DA0708;
 					};
 				};
 			};
@@ -133,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				C1BD97BB2434F77A00DA0708 /* EncodingConverter */,
+				C1F13036247AA6FA0069874C /* EncodingConverterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +209,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C1F13035247AA6FA0069874C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -156,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BD97D4243511C800DA0708 /* FileLoader.swift in Sources */,
+				C1F13032247AA57F0069874C /* BOMProcessor.swift in Sources */,
 				C1F1302E247A956F0069874C /* FileEncoding.swift in Sources */,
 				C1BD97C02434F77A00DA0708 /* AppDelegate.swift in Sources */,
 				C1735185244328CF003F5C97 /* TargetEncodingPopUpButton.swift in Sources */,
@@ -166,7 +235,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C1F13033247AA6FA0069874C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1F1303A247AA6FA0069874C /* EncodingConverterTests.swift in Sources */,
+				C1F13042247AA7340069874C /* BOMProcessingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C1F1303D247AA6FA0069874C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1BD97BB2434F77A00DA0708 /* EncodingConverter */;
+			targetProxy = C1F1303C247AA6FA0069874C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C1BD97C52434F77C00DA0708 /* Main.storyboard */ = {
@@ -333,6 +419,46 @@
 			};
 			name = Release;
 		};
+		C1F1303F247AA6FA0069874C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8VW3NBHS54;
+				INFOPLIST_FILE = EncodingConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = semyonish.EncodingConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EncodingConverter.app/Contents/MacOS/EncodingConverter";
+			};
+			name = Debug;
+		};
+		C1F13040247AA6FA0069874C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8VW3NBHS54;
+				INFOPLIST_FILE = EncodingConverterTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = semyonish.EncodingConverterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EncodingConverter.app/Contents/MacOS/EncodingConverter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -350,6 +476,15 @@
 			buildConfigurations = (
 				C1BD97CD2434F77C00DA0708 /* Debug */,
 				C1BD97CE2434F77C00DA0708 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1F1303E247AA6FA0069874C /* Build configuration list for PBXNativeTarget "EncodingConverterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1F1303F247AA6FA0069874C /* Debug */,
+				C1F13040247AA6FA0069874C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
