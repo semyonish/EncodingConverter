@@ -13,6 +13,7 @@ class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        filesModel.delegate = self
         configureTableView()
         reloadFiles()
     }
@@ -23,7 +24,7 @@ class MainViewController: NSViewController {
     
     // MARK: - Toolbar buttons handlers
     
-    @IBAction func openFolder(_ sender: Any) {
+    @IBAction func openFolderBtnDidPressed(_ sender: Any) {
         let folderDlg = NSOpenPanel()
         folderDlg.canChooseDirectories = true
         folderDlg.canChooseFiles = false;
@@ -31,32 +32,37 @@ class MainViewController: NSViewController {
         folderDlg.beginSheetModal(for: self.view.window!)
         { (response) in
             if response != NSApplication.ModalResponse.OK { return }
-            self.openedFolderUrl = folderDlg.url!
+            self.filesModel.setFolderUrl(folderDlg.url!)
         }
     }
     
-    @IBAction func refreshFolder(_ sender: Any) {
+    @IBAction func refreshFolderBtnDidPressed(_ sender: Any) {
         reloadFiles()
     }
     
-    @objc func targetEncodingSelected(sender: NSMenuItem) {
-        targetEncoding = FileEncoding.init(rawValue: sender.title)
-    }
-    
-    @IBAction func encodeToUTF8BOM(_ sender: Any) {
-        guard let targetEncoding = targetEncoding else {
+    @IBAction func encodeBtnDidPressed(_ sender: Any) {
+        guard let targetEncodingName = targetEncodingName else {
             return
         }
         
-        let indices = filesTableView.selectedRowIndexes
-        for index in indices {
-            convertStatuses[index] =
-                FileEncoder.encode(file: files[index].url, to: targetEncoding)
-                ? ConvertStatus.Converted
-                : ConvertStatus.Error
-        }
+        let indexes = filesTableView.selectedRowIndexes
+        let convertResults = filesModel.encodeFiles(from: indexes, toEncodingWithName: targetEncodingName)
         
-        refreshEncodings()
+        filesModel.refreshEncodings()
+        
+        for index in indexes {
+            guard let result = convertResults[index] else
+            {
+                print("Error: there is not converting result for index = \(index)")
+                continue
+            }
+            
+            convertStatuses[index] = result ? ConvertStatus.Converted : ConvertStatus.Error
+        }
+    }
+    
+    @objc func targetEncodingSelected(sender: NSMenuItem) {
+        targetEncodingName = sender.title
     }
     
     // MARK: - Internal data types
@@ -65,7 +71,14 @@ class MainViewController: NSViewController {
         static let NameCell = NSUserInterfaceItemIdentifier("NameCellId")
         static let EncodingCell = NSUserInterfaceItemIdentifier("EncodingCellId")
         static let ModificationDateCell = NSUserInterfaceItemIdentifier("ModificationDateCellId")
-        static let ConvertStatus = NSUserInterfaceItemIdentifier("ConvertStatusCellId")
+        static let ConvertStatusCell = NSUserInterfaceItemIdentifier("ConvertStatusCellId")
+    }
+    
+    fileprivate enum CellIndex {
+        static let NameCell = 0
+        static let EncodingCell = 1
+        static let ModificationDateCell = 2
+        static let ConvertStatusCell = 3
     }
     
     fileprivate enum ConvertStatus: String {
@@ -76,24 +89,17 @@ class MainViewController: NSViewController {
     
     // MARK: - private fields
     
-    private var openedFolderUrl = URL(fileURLWithPath: "/") {
-        didSet {
-            reloadFiles()
-        }
-    }
+    private var filesModel = FilesModel()
     
-    private var files = [FileMetadata]()
+    private var targetEncodingName: String?
     
-    private var targetEncoding: FileEncoding?
-    
-    private var convertStatuses = [ConvertStatus]() {
+    private var presentingFiles = [FileMetadata]()
+    private var convertStatuses = [ConvertStatus]()
+    {
         didSet {
             filesTableView.reloadData()
         }
     }
-    
-    private var sortKeySelected = FileMetadataOrderKey.name
-    private var sortAscending = false
     
     // MARK: - Private methods
     
@@ -103,41 +109,37 @@ class MainViewController: NSViewController {
         
         filesTableView.doubleAction = #selector(self.tableViewDoubleClick)
         
-        filesTableView.tableColumns[0].sortDescriptorPrototype = NSSortDescriptor(key: FileMetadataOrderKey.name.rawValue, ascending: true)
-        filesTableView.tableColumns[2].sortDescriptorPrototype = NSSortDescriptor(key: FileMetadataOrderKey.modificationDate.rawValue, ascending: false)
+        filesTableView.tableColumns[CellIndex.NameCell].sortDescriptorPrototype =
+            NSSortDescriptor(key: FileMetadataOrderKey.name.rawValue, ascending: true)
+        
+        filesTableView.tableColumns[CellIndex.ModificationDateCell].sortDescriptorPrototype =
+            NSSortDescriptor(key: FileMetadataOrderKey.modificationDate.rawValue, ascending: false)
     }
     
     private func reloadFiles() {
-        files = FileLoader.loadFiles(from: openedFolderUrl)
-        sortFiles()
-        
-        resetConvertStatuses()
-    }
-    
-    private func refreshEncodings() {
-        files = FileLoader.refreshEncdoings(files: files)
-    }
-    
-    private func sortFiles() {
-        switch sortKeySelected {
-        case .name:
-            files.sort { itemCompare(lhs: $0.name, rhs: $1.name, ascending: sortAscending) }
-        case .modificationDate:
-            files.sort { itemCompare(lhs: $0.modificationDate, rhs: $1.modificationDate, ascending: sortAscending) }
-        }
-        
+        filesModel.reloadFiles()
         resetConvertStatuses()
     }
     
     private func resetConvertStatuses() {
-        convertStatuses = Array.init(repeating: ConvertStatus.NotSelected, count: files.count)
+        convertStatuses = Array.init(repeating: ConvertStatus.NotSelected, count: filesModel.getFilesCount())
     }
     
 }
 
+extension MainViewController: FilesModelDelegate {
+    func updateUI() {
+        presentingFiles = filesModel.getFiles()
+        filesTableView.reloadData()
+        
+        resetConvertStatuses()
+    }
+}
+
 extension MainViewController: NSTableViewDataSource {
+    
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return files.count
+        return filesModel.getFilesCount()
     }
     
     func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
@@ -146,11 +148,10 @@ extension MainViewController: NSTableViewDataSource {
         }
         
         if let sortKey = FileMetadataOrderKey(rawValue: sortDescriptor.key ?? "") {
-            sortKeySelected = sortKey
-            sortAscending = sortDescriptor.ascending
-            sortFiles()
+            filesModel.setSortParameters(key: sortKey, ascending: sortDescriptor.ascending)
         }
     }
+    
 }
 
 extension MainViewController: NSTableViewDelegate {
@@ -162,36 +163,33 @@ extension MainViewController: NSTableViewDelegate {
             return
         }
         
-        let clickedFile = files[filesTableView.selectedRow]
-        if clickedFile.isDirectory {
-            openedFolderUrl = clickedFile.url
-        }
+        filesModel.openFolderWith(row: filesTableView.selectedRow)
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if tableColumn == filesTableView.tableColumns[0] { // name
+        if tableColumn == filesTableView.tableColumns[CellIndex.NameCell] {
             let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.NameCell, owner: nil) as? NSTableCellView
-            cellView?.textField?.stringValue = files[row].name
-            cellView?.imageView?.image = files[row].icon
+            cellView?.textField?.stringValue = presentingFiles[row].name
+            cellView?.imageView?.image = presentingFiles[row].icon
             return cellView
         }
-        else if tableColumn == filesTableView.tableColumns[1] { // encoding
+        else if tableColumn == filesTableView.tableColumns[CellIndex.EncodingCell] {
             let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.EncodingCell, owner: nil) as? NSTableCellView
-            cellView?.textField?.stringValue = files[row].encodingDescription
+            cellView?.textField?.stringValue = presentingFiles[row].encodingDescription
             return cellView
         }
-        else if tableColumn == filesTableView.tableColumns[2] { // modification date
-            let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.ConvertStatus, owner: nil) as? NSTableCellView
+        else if tableColumn == filesTableView.tableColumns[CellIndex.ModificationDateCell] {
+            let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.ConvertStatusCell, owner: nil) as? NSTableCellView
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .short
             dateFormatter.timeStyle = .short
             
-            cellView?.textField?.stringValue = dateFormatter.string(from: files[row].modificationDate)
+            cellView?.textField?.stringValue = dateFormatter.string(from: presentingFiles[row].modificationDate)
             return cellView
         }
-        else if tableColumn == filesTableView.tableColumns[3] { // convert status
-            let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.ConvertStatus, owner: nil) as? NSTableCellView
+        else if tableColumn == filesTableView.tableColumns[CellIndex.ConvertStatusCell] {
+            let cellView = filesTableView.makeView(withIdentifier:CellIdentifiers.ConvertStatusCell, owner: nil) as? NSTableCellView
             cellView?.textField?.stringValue = convertStatuses[row].rawValue
             return cellView
         }

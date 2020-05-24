@@ -96,21 +96,21 @@
                                     <size key="minSize" width="32" height="32"/>
                                     <size key="maxSize" width="32" height="32"/>
                                     <connections>
-                                        <action selector="openFolder:" target="Oky-zY-oP4" id="LbY-r0-5xn"/>
+                                        <action selector="openFolderBtnDidPressed:" target="Oky-zY-oP4" id="Ysv-N4-5f6"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="67EBBE43-7CD0-4D18-A518-E84403A5D956" label="Convert" paletteLabel="Convert" tag="-1" image="NSFollowLinkFreestandingTemplate" id="HtC-Xp-fWg">
                                     <size key="minSize" width="17" height="14"/>
                                     <size key="maxSize" width="17" height="14"/>
                                     <connections>
-                                        <action selector="encodeToUTF8BOM:" target="Oky-zY-oP4" id="sqU-vg-z60"/>
+                                        <action selector="encodeBtnDidPressed:" target="Oky-zY-oP4" id="klb-L2-7Fl"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="2C5919B8-18C0-462C-B9E4-98A075B5454B" label="Refresh" paletteLabel="Refresh" tag="-1" image="NSRefreshFreestandingTemplate" id="IsR-zV-5Bi">
                                     <size key="minSize" width="14" height="14"/>
                                     <size key="maxSize" width="14" height="14"/>
                                     <connections>
-                                        <action selector="refreshFolder:" target="Oky-zY-oP4" id="ETZ-jz-xlb"/>
+                                        <action selector="refreshFolderBtnDidPressed:" target="Oky-zY-oP4" id="t8l-mx-mRk"/>
                                     </connections>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="370544C1-64AA-4D02-913F-82855C78EF99" label="Target Encoding" paletteLabel="Target Encoding" sizingBehavior="auto" id="icN-TK-e8q">

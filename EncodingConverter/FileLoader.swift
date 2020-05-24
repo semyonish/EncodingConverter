@@ -1,5 +1,5 @@
 //
-//  FileLoading.swift
+//  FileLoader.swift
 //  EncodingConverter
 //
 //  Created by Семён Ишханян on 01.04.2020.
@@ -7,29 +7,6 @@
 //
 
 import AppKit
-
-struct FileMetadata {
-    let name: String
-    let icon: NSImage
-    let color: NSColor
-    let isDirectory: Bool
-    let url: URL
-    let modificationDate: Date
-    var encoding: FileEncoding
-    
-    var encodingDescription: String {
-        return isDirectory ? "folder" : encoding.rawValue
-    }
-}
-
-enum FileMetadataOrderKey: String {
-    case name
-    case modificationDate
-}
-
-public func itemCompare<T: Comparable>(lhs: T, rhs: T, ascending: Bool) -> Bool {
-    return ascending ? (lhs < rhs) : (rhs < lhs)
-}
 
 class FileLoader {
     
@@ -73,13 +50,5 @@ class FileLoader {
         }
         
         return files
-    }
-    
-    static func refreshEncdoings(files:[FileMetadata]) -> [FileMetadata] {
-        return files.map { file in
-            var newFile = file
-            newFile.encoding = FileEncoder.getEncoding(of: file.url)
-            return newFile
-        }
     }
 }

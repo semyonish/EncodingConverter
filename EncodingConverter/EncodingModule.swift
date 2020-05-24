@@ -8,21 +8,6 @@
 
 import Foundation
 
-enum FileEncoding: String {
-    case utf8 = "UTF-8"
-    case utf8withBOM = "UTF-8 with BOM"
-    case identificationError = "FAILED"
-    
-    init(stringEncoding: String.Encoding, bom: Bool) {
-        switch stringEncoding {
-        case .utf8:
-            self = bom ? .utf8withBOM : .utf8
-        default:
-            self = .identificationError
-        }
-    }
-}
-
 class FileEncoder {
     
     static let supportedEncodings: [FileEncoding] = [ .utf8, .utf8withBOM]
