@@ -1,14 +1,20 @@
-unittests:
+stages:
+    - unit_tests
+    - build_app
+
+unit_tests:
+    stage: unit_tests
     script:
         - xcodebuild clean -project EncodingConverter.xcodeproj -scheme EncodingConverter
         - xcodebuild test -project EncodingConverter.xcodeproj -scheme EncodingConverter
 
 build_app:
+    stage: build_app
     script:
         - pwd
         - xcodebuild clean -project EncodingConverter.xcodeproj -scheme EncodingConverter
         - xcodebuild build -project EncodingConverter.xcodeproj -scheme EncodingConverter -configuration Release
     artifacts:
         paths:
-        - Build/Products/Release/
+        - Build/Products/Release/EncodingConverter.app
         expire_in: 1 month
