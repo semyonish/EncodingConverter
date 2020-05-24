@@ -3,5 +3,6 @@ stages:
 build_project:
     stage: build
     script:
-        - xcodebuild clean -project EncodingConverter.xcodeproj -scheme EncodingConverter
-        - xcodebuild test -project EncodingConverter.xcodeproj -scheme EncodingConverter
+        #- xcodebuild -project EncodingConverter.xcodeproj -list 
+        #- xcodebuild clean -project EncodingConverter.xcodeproj -scheme EncodingConverterTests
+        - xcodebuild test -project EncodingConverter.xcodeproj -scheme EncodingConverterTests
