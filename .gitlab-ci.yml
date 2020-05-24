@@ -5,9 +5,10 @@ unittests:
 
 build_app:
     script:
+        - pwd
         - xcodebuild clean -project EncodingConverter.xcodeproj -scheme EncodingConverter
         - xcodebuild build -project EncodingConverter.xcodeproj -scheme EncodingConverter -configuration Release
     artifacts:
         paths:
-        - Build/Products/Release/EncodingConverter
+        - Build/Products/Release/
         expire_in: 1 month
