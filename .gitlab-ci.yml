@@ -5,15 +5,14 @@ stages:
 unit_tests:
     stage: unit_tests
     script:
-        - xcodebuild clean -project EncodingConverter.xcodeproj -scheme EncodingConverter
-        - xcodebuild test -project EncodingConverter.xcodeproj -scheme EncodingConverter
+        - xcodebuild clean -workspace EncodingConverter.xcworkspace -scheme EncodingConverter
+        - xcodebuild test -workspace EncodingConverter.xcworkspace -scheme EncodingConverter
 
 build_app:
     stage: build_app
     script:
-        - pwd
-        - xcodebuild clean -project EncodingConverter.xcodeproj -scheme EncodingConverter
-        - xcodebuild build -project EncodingConverter.xcodeproj -scheme EncodingConverter -configuration Release
+        - xcodebuild clean -workspace EncodingConverter.xcworkspace -scheme EncodingConverter
+        - xcodebuild build -workspace EncodingConverter.xcworkspace -scheme EncodingConverter -configuration Release
     artifacts:
         paths:
         - Build/Products/Release/EncodingConverter.app

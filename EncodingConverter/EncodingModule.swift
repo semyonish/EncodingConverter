@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UniversalDetector
 
 class FileEncoder {
     
@@ -16,12 +17,19 @@ class FileEncoder {
     
     static func getEncoding(of fileURL: URL) -> FileEncoding {
         do {
-            var stringEncoding = String.Encoding.utf8
-            _ = try String.init(contentsOf: fileURL, usedEncoding: &stringEncoding)
-
-            return FileEncoding(stringEncoding: stringEncoding, bom: BOMProcessor.findBOM(in: fileURL))
-        } catch {
-            print("FileEncoder.getENcoding error checking encoding \(fileURL)")
+            let fileData = try Data.init(contentsOf: fileURL)
+            let encName = UniversalDetector.encodingAsString(with: fileData) ?? "FAILED"
+            
+            var fileEncoding = FileEncoding.init(rawValue: encName) ?? FileEncoding.identificationError
+            
+            if fileEncoding == .utf8 {
+                fileEncoding = FileEncoding(utf8WithBom: BOMProcessor.findBOM(in: fileURL))
+            }
+            
+            return fileEncoding
+        }
+        catch {
+            print("FileEncoder.getEncoding error checking encoding \(fileURL)")
             return FileEncoding.identificationError
         }
     }
@@ -32,8 +40,10 @@ class FileEncoder {
         switch (oldEncoding, newEncoding) {
         case (.utf8, .utf8withBOM):
             return BOMProcessor.addBom(to: file)
+        
         case (.utf8withBOM, .utf8):
             return BOMProcessor.removeBOM(from: file)
+        
         default:
             print("FileEncoder.encode failed call with oldEnc = \(oldEncoding.rawValue), newEnc = \(newEncoding.rawValue)")
             return false
@@ -41,3 +51,4 @@ class FileEncoder {
     }
 
 }
+

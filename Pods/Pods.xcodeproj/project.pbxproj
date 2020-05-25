@@ -1,0 +1,835 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0196DEAD5257F583E1220D3F552BB964 /* nsBig5Prober.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 351DD7E37A9A5CB2B32E661690579940 /* nsBig5Prober.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0645027803C075AEDC1E3852A8B8985F /* Pods-EncodingConverter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19059FEB6D1415B6807396522D2DE810 /* Pods-EncodingConverter-dummy.m */; };
+		093732E2880A3095B78A1EAE08A1A377 /* GB2312Freq.tab in Resources */ = {isa = PBXBuildFile; fileRef = 88C6CE18A746BA18D1730433A00B653A /* GB2312Freq.tab */; };
+		10304E31582D1B329F384272040B548A /* nsSBCharSetProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB877AF914542F3C5D78710BD0876E /* nsSBCharSetProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		12B1AB31E2D2A6D6E70F4F8566DF7E3D /* LangBulgarianModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2065E9F34C05DA5833AE84F8DD8D8FE /* LangBulgarianModel.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		149DB568168F8FB7FC0B5B0A865AE9EC /* EUCKRFreq.tab in Resources */ = {isa = PBXBuildFile; fileRef = 788ECDADF3D541E71311F6C87114955F /* EUCKRFreq.tab */; };
+		164FBF8AB4A4AF76BF46F318C240B97E /* nsHebrewProber.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FF23980168B792C3AFADDB7788E93D4 /* nsHebrewProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		1A07EDA741C7605DBC40F4F9BD2E398F /* JpCntx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 517BDD64A388D98DB03524799A76081D /* JpCntx.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1BDEDE9FDF43BF364B483C6C336355E3 /* UniversalDetector-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57F3E940BDA8BDD1E36EAF587AD75636 /* UniversalDetector-dummy.m */; };
+		217A6A73E80E8AB53477E6F023BB3728 /* nsEUCJPProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1402576DE68D40C93D42C7E58105B44E /* nsEUCJPProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2B41ED0194E9331D9C24E44B78387D39 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
+		2CF1B02545F93C67C12917514A94C647 /* nsEUCTWProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5E531C942113A5FBBCE82F8355956F0 /* nsEUCTWProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		31D0DAFAA92B890541F715D6FB8EEF1C /* nsUTF8Prober.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45A7E483A758617FF141BF0326F215DE /* nsUTF8Prober.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		3431C18F336D4BF7C108C9D96FE3D864 /* nsEUCJPProber.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A0BB79B967C723FFC32E6117179F08 /* nsEUCJPProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		35FF0601906F0AA044CBE865AE488242 /* nsSJISProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB7B040F36C596DF2D78D6F4F49D8CA5 /* nsSJISProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		363FB9C791AA7FA6CDD4697826C0E33A /* prtypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A25B4DE341A735FD6CE01D506007169 /* prtypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		3643C1E3FE65441E30E4A21BBC749592 /* nsUniversalDetector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 880C74A0FAD3A44F56DB292D0FCAA92A /* nsUniversalDetector.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		391529804B89C5CE10CD36BD40CB215D /* nsUTF8Prober.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CC3FC01102B90276EBCF0779A40EC44 /* nsUTF8Prober.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		398E2E13DB7204EF8B288498D8265081 /* UniversalDetector-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43572D018540B4685FFC22255CD67298 /* UniversalDetector-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43296ED97E690F3849B540C24CDB92F1 /* LangHebrewModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 60698E496849BDB48D9000AB2166C092 /* LangHebrewModel.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		477C08CC658DD43D2A2A94D5F3C822DA /* nsSBCSGroupProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9E269C78CE72F98B459DCE42061451A7 /* nsSBCSGroupProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4DEB0D6C721EC2E509694B07BE24D70D /* nsGB2312Prober.h in Headers */ = {isa = PBXBuildFile; fileRef = 45D9301D1D08B2C8B1E86DAAF0E8D183 /* nsGB2312Prober.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4DFC73ADD3E4F26DA8C344AF22025114 /* LangThaiModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 628BDE5BACAAE3E3575FAE918BACF460 /* LangThaiModel.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		4F33B92DF8BB6721A927C4DAE8A960F9 /* nsUniversalDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = 5176D9A68BE2A5A7BD9818C54C210B9D /* nsUniversalDetector.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		54DEEBA22778555C47365B68262A5B7B /* nsMBCSGroupProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 45118CF6476F0E82AEC5538F6AC783DB /* nsMBCSGroupProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5FB594ED60BFA264AA794B6EC109877E /* nsSBCharSetProber.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E489A5324DDF792A1FEEB51FBC0A81 /* nsSBCharSetProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		61899E128EDC5FF152F159631C5CDB81 /* nsEUCKRProber.h in Headers */ = {isa = PBXBuildFile; fileRef = CE200E3101B0277C969725D3B3494C6B /* nsEUCKRProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		64F8F5515D19849A3DD1DBDC4F1B0E89 /* nsSBCSGroupProber.h in Headers */ = {isa = PBXBuildFile; fileRef = DEEE804934B176C8F432B4CC1F7E01FD /* nsSBCSGroupProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		66A2D7A4575C2C0375B7AB94F4B9AF96 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */; };
+		68A246BFC7764C128E184AF955CE3C27 /* nsEscCharsetProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD20941142DFDA1857028AB4258EE3D7 /* nsEscCharsetProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6952B808CA4FB0A97D35DC8486C485EB /* CharDistribution.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D200596A9E47B1B6F958BFE7CB305759 /* CharDistribution.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6D4CB19960A326B970A3CC875E4C9872 /* nsPkgInt.h in Headers */ = {isa = PBXBuildFile; fileRef = F305C227BCDA4DBED28396BCA9704336 /* nsPkgInt.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		747BED29F17D0C2DBB672E2766BDE85D /* JpCntx.h in Headers */ = {isa = PBXBuildFile; fileRef = 29748C821C5096ADDCC770506C243E33 /* JpCntx.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		74943F945038E0580FF3642014E027BA /* nsSJISProber.h in Headers */ = {isa = PBXBuildFile; fileRef = C3E05096DFC56F96D382C4C2A7583B22 /* nsSJISProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		74FB09F77EA1E78DF3A737E7F506083A /* LangHungarianModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC8C1044C91D71B4D8F5AA013F8C744F /* LangHungarianModel.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		79121686D434374CFF0C94A779332F92 /* nsEscSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE996A7AB856DE9339F22C68B7F61207 /* nsEscSM.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		7E9F6716ECC10D49B0846D33EC9B807F /* nsLatin1Prober.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C5ED9F5133CD45C714D1CD1B90AAE6F /* nsLatin1Prober.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		85EAD5A651EC1E0D9534995F04A394F4 /* EUCTWFreq.tab in Resources */ = {isa = PBXBuildFile; fileRef = BAD374B7EFC0062103CB37F126870238 /* EUCTWFreq.tab */; };
+		9BCFEA4B36C1D7914B7C3C43CA913137 /* nsMBCSGroupProber.h in Headers */ = {isa = PBXBuildFile; fileRef = 6728209AFF3A2189F3FA14CCF5560583 /* nsMBCSGroupProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9DEE6D860D6DE1B6B76C879530D2D339 /* nsEscCharsetProber.h in Headers */ = {isa = PBXBuildFile; fileRef = AE2B1CE78F083B67D2AF5BDF543915C3 /* nsEscCharsetProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A0C6CBDC5944C6A6A15112F4B30564D8 /* UniversalDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A57A8B8672AAC05399D55689625013D /* UniversalDetector.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A28C29FDDEAE49AA5BB8CFF894419187 /* nscore.h in Headers */ = {isa = PBXBuildFile; fileRef = AF755D729FCAFB94156BFD7ABEC3CF25 /* nscore.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A3334BE1F69578C98DDF9B65EC348058 /* nsMBCSSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 819478CDA04160E139204E7BD5EEB7C4 /* nsMBCSSM.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A3841C51D824324048ED81DAA1C72E02 /* nsCharSetProber.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E46F275ED9559C4839B0A1B4432C6BE /* nsCharSetProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A6F34DFB853198F8713CB96AF980A292 /* nsBig5Prober.h in Headers */ = {isa = PBXBuildFile; fileRef = 106F30815F197D3A1245498F8AC796B1 /* nsBig5Prober.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AA759AD5DD63D81074F522FB17B3F063 /* prmem.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F33E6FD6DDD50FB454078FF5719F404 /* prmem.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		AAB151505080248BF043F841FFB02124 /* CharDistribution.h in Headers */ = {isa = PBXBuildFile; fileRef = C75B26DCA0B17C81B921D3BA4B142147 /* CharDistribution.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		ACC5771E8B0BBBB9EEE7B8A6AD35832B /* nsLatin1Prober.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C2C7A1A215249932B909994F51011 /* nsLatin1Prober.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		ADD87C50DFABCC587F2DFF8A36E610B0 /* Big5Freq.tab in Resources */ = {isa = PBXBuildFile; fileRef = AA744356A2F57AEF599870F2E84EFF37 /* Big5Freq.tab */; };
+		AE83A23BCB83D41DFE24D34EDDD3A810 /* nsCodingStateMachine.h in Headers */ = {isa = PBXBuildFile; fileRef = 767DAE6E22CEE985EA5C47B6A75F2BAD /* nsCodingStateMachine.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B0F9CF00C5F7E00F6DB3E7C85FA79A65 /* LangCyrillicModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CBE2B79E9CAC9A0DE5A7128550F299B /* LangCyrillicModel.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B4EB2B20FE38EDE6D89DC3356FFD2139 /* nsEUCTWProber.h in Headers */ = {isa = PBXBuildFile; fileRef = A46FB1DD3DA020465838FE8466F6F92C /* nsEUCTWProber.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B79F4B40B9AF71C52DDDDF4D153B0D30 /* nsEUCKRProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1A17F21177F4B22E69099A16C6DFEE6E /* nsEUCKRProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C0253165D5B84A7D658C4D9C95C383B2 /* JISFreq.tab in Resources */ = {isa = PBXBuildFile; fileRef = 248BED861F12A6B39D3A744B817394EE /* JISFreq.tab */; };
+		CE1C547D81F52CEFEB72F2EF7CDB7705 /* uchardet.h in Headers */ = {isa = PBXBuildFile; fileRef = 54B1FE4575367E9335E59112EA797369 /* uchardet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D12BA7B46A00226CBE0A26320D72B647 /* Pods-EncodingConverter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A8A0DE58502094BCC8077BE709BAA50 /* Pods-EncodingConverter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAC52A0E5CC0599FECC8F3442F49CB80 /* uchardet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B4AB255DA2D09A34D22A39C4036B6B87 /* uchardet.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DDFF5D06B4E1A5CDAEB5E2EAD41EE1E7 /* LangGreekModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25EA5018521E29222485F15C3DC11923 /* LangGreekModel.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E04F3F677AFCDA875329A2244CF250F4 /* nsHebrewProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 334690E467623F2FB12B2034334B77BE /* nsHebrewProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E12235B116A362C792D32ACF2C2C1848 /* nsCharSetProber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F6A09045AF09D82E32C52ACE275422 /* nsCharSetProber.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E462E0E0BDF5EAC2808EAC0E25344FD4 /* UniversalDetector.h in Headers */ = {isa = PBXBuildFile; fileRef = B24B616E21814FAF42E2E8EB89DCBE2E /* UniversalDetector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F63EBCA3B92ADFFA6E9E00B76CDBFA95 /* nsGB2312Prober.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F63F53E9E0C0E608D9D033FC39B5177D /* nsGB2312Prober.cpp */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		050A6C4B8D4B6F6AD0CA73C076FA2001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8A6569ECB3F3DF926DB6277FA6EE4C3;
+			remoteInfo = UniversalDetector;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03E489A5324DDF792A1FEEB51FBC0A81 /* nsSBCharSetProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsSBCharSetProber.h; path = external/universalchardet/src/base/nsSBCharSetProber.h; sourceTree = "<group>"; };
+		0ADBD451D97AAC61746DC3B9F8D1F2E7 /* UniversalDetector-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UniversalDetector-prefix.pch"; sourceTree = "<group>"; };
+		106F30815F197D3A1245498F8AC796B1 /* nsBig5Prober.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsBig5Prober.h; path = external/universalchardet/src/base/nsBig5Prober.h; sourceTree = "<group>"; };
+		1402576DE68D40C93D42C7E58105B44E /* nsEUCJPProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsEUCJPProber.cpp; path = external/universalchardet/src/base/nsEUCJPProber.cpp; sourceTree = "<group>"; };
+		19059FEB6D1415B6807396522D2DE810 /* Pods-EncodingConverter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EncodingConverter-dummy.m"; sourceTree = "<group>"; };
+		1A17F21177F4B22E69099A16C6DFEE6E /* nsEUCKRProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsEUCKRProber.cpp; path = external/universalchardet/src/base/nsEUCKRProber.cpp; sourceTree = "<group>"; };
+		248BED861F12A6B39D3A744B817394EE /* JISFreq.tab */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = JISFreq.tab; path = external/universalchardet/src/base/JISFreq.tab; sourceTree = "<group>"; };
+		25EA5018521E29222485F15C3DC11923 /* LangGreekModel.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = LangGreekModel.cpp; path = external/universalchardet/src/base/LangGreekModel.cpp; sourceTree = "<group>"; };
+		29748C821C5096ADDCC770506C243E33 /* JpCntx.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JpCntx.h; path = external/universalchardet/src/base/JpCntx.h; sourceTree = "<group>"; };
+		2A57A8B8672AAC05399D55689625013D /* UniversalDetector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UniversalDetector.m; path = UniversalDetector/UniversalDetector.m; sourceTree = "<group>"; };
+		2FCB877AF914542F3C5D78710BD0876E /* nsSBCharSetProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsSBCharSetProber.cpp; path = external/universalchardet/src/base/nsSBCharSetProber.cpp; sourceTree = "<group>"; };
+		334690E467623F2FB12B2034334B77BE /* nsHebrewProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsHebrewProber.cpp; path = external/universalchardet/src/base/nsHebrewProber.cpp; sourceTree = "<group>"; };
+		351DD7E37A9A5CB2B32E661690579940 /* nsBig5Prober.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsBig5Prober.cpp; path = external/universalchardet/src/base/nsBig5Prober.cpp; sourceTree = "<group>"; };
+		3F79B80DA969C5F2C671080C1DB36F52 /* Pods-EncodingConverter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EncodingConverter-acknowledgements.plist"; sourceTree = "<group>"; };
+		43572D018540B4685FFC22255CD67298 /* UniversalDetector-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UniversalDetector-umbrella.h"; sourceTree = "<group>"; };
+		45118CF6476F0E82AEC5538F6AC783DB /* nsMBCSGroupProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsMBCSGroupProber.cpp; path = external/universalchardet/src/base/nsMBCSGroupProber.cpp; sourceTree = "<group>"; };
+		45A7E483A758617FF141BF0326F215DE /* nsUTF8Prober.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsUTF8Prober.cpp; path = external/universalchardet/src/base/nsUTF8Prober.cpp; sourceTree = "<group>"; };
+		45D9301D1D08B2C8B1E86DAAF0E8D183 /* nsGB2312Prober.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsGB2312Prober.h; path = external/universalchardet/src/base/nsGB2312Prober.h; sourceTree = "<group>"; };
+		5176D9A68BE2A5A7BD9818C54C210B9D /* nsUniversalDetector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsUniversalDetector.h; path = external/universalchardet/src/base/nsUniversalDetector.h; sourceTree = "<group>"; };
+		517BDD64A388D98DB03524799A76081D /* JpCntx.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = JpCntx.cpp; path = external/universalchardet/src/base/JpCntx.cpp; sourceTree = "<group>"; };
+		51A022459759D4E22401766A04ECD3E0 /* Pods-EncodingConverter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-EncodingConverter.modulemap"; sourceTree = "<group>"; };
+		52F6A09045AF09D82E32C52ACE275422 /* nsCharSetProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsCharSetProber.cpp; path = external/universalchardet/src/base/nsCharSetProber.cpp; sourceTree = "<group>"; };
+		54B1FE4575367E9335E59112EA797369 /* uchardet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = uchardet.h; path = external/uchardet.h; sourceTree = "<group>"; };
+		57F3E940BDA8BDD1E36EAF587AD75636 /* UniversalDetector-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UniversalDetector-dummy.m"; sourceTree = "<group>"; };
+		5A6C2C7A1A215249932B909994F51011 /* nsLatin1Prober.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsLatin1Prober.cpp; path = external/universalchardet/src/base/nsLatin1Prober.cpp; sourceTree = "<group>"; };
+		5CC3FC01102B90276EBCF0779A40EC44 /* nsUTF8Prober.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsUTF8Prober.h; path = external/universalchardet/src/base/nsUTF8Prober.h; sourceTree = "<group>"; };
+		60698E496849BDB48D9000AB2166C092 /* LangHebrewModel.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = LangHebrewModel.cpp; path = external/universalchardet/src/base/LangHebrewModel.cpp; sourceTree = "<group>"; };
+		628BDE5BACAAE3E3575FAE918BACF460 /* LangThaiModel.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = LangThaiModel.cpp; path = external/universalchardet/src/base/LangThaiModel.cpp; sourceTree = "<group>"; };
+		63C505630E088AB1578C43545DE43E5B /* UniversalDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UniversalDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6728209AFF3A2189F3FA14CCF5560583 /* nsMBCSGroupProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsMBCSGroupProber.h; path = external/universalchardet/src/base/nsMBCSGroupProber.h; sourceTree = "<group>"; };
+		6CBE2B79E9CAC9A0DE5A7128550F299B /* LangCyrillicModel.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = LangCyrillicModel.cpp; path = external/universalchardet/src/base/LangCyrillicModel.cpp; sourceTree = "<group>"; };
+		7197D8B56F60D6297F00166D08E45F7E /* Pods-EncodingConverter-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EncodingConverter-frameworks.sh"; sourceTree = "<group>"; };
+		75A0BB79B967C723FFC32E6117179F08 /* nsEUCJPProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsEUCJPProber.h; path = external/universalchardet/src/base/nsEUCJPProber.h; sourceTree = "<group>"; };
+		767DAE6E22CEE985EA5C47B6A75F2BAD /* nsCodingStateMachine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsCodingStateMachine.h; path = external/universalchardet/src/base/nsCodingStateMachine.h; sourceTree = "<group>"; };
+		788ECDADF3D541E71311F6C87114955F /* EUCKRFreq.tab */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EUCKRFreq.tab; path = external/universalchardet/src/base/EUCKRFreq.tab; sourceTree = "<group>"; };
+		7FF23980168B792C3AFADDB7788E93D4 /* nsHebrewProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsHebrewProber.h; path = external/universalchardet/src/base/nsHebrewProber.h; sourceTree = "<group>"; };
+		819478CDA04160E139204E7BD5EEB7C4 /* nsMBCSSM.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsMBCSSM.cpp; path = external/universalchardet/src/base/nsMBCSSM.cpp; sourceTree = "<group>"; };
+		880C74A0FAD3A44F56DB292D0FCAA92A /* nsUniversalDetector.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsUniversalDetector.cpp; path = external/universalchardet/src/base/nsUniversalDetector.cpp; sourceTree = "<group>"; };
+		88C6CE18A746BA18D1730433A00B653A /* GB2312Freq.tab */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GB2312Freq.tab; path = external/universalchardet/src/base/GB2312Freq.tab; sourceTree = "<group>"; };
+		8A25B4DE341A735FD6CE01D506007169 /* prtypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = prtypes.h; path = external/prtypes.h; sourceTree = "<group>"; };
+		8A8A0DE58502094BCC8077BE709BAA50 /* Pods-EncodingConverter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EncodingConverter-umbrella.h"; sourceTree = "<group>"; };
+		8E46F275ED9559C4839B0A1B4432C6BE /* nsCharSetProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsCharSetProber.h; path = external/universalchardet/src/base/nsCharSetProber.h; sourceTree = "<group>"; };
+		8F33E6FD6DDD50FB454078FF5719F404 /* prmem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = prmem.h; path = external/prmem.h; sourceTree = "<group>"; };
+		8F6B8D0BBDBF5F8E63EE328E72046D11 /* Pods-EncodingConverter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EncodingConverter-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9134AD80CE14967BF099D768B5FD523C /* Pods-EncodingConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EncodingConverter.debug.xcconfig"; sourceTree = "<group>"; };
+		97FC2410AF858C9ACA724FA72199BF3C /* Pods-EncodingConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EncodingConverter.release.xcconfig"; sourceTree = "<group>"; };
+		9C5ED9F5133CD45C714D1CD1B90AAE6F /* nsLatin1Prober.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsLatin1Prober.h; path = external/universalchardet/src/base/nsLatin1Prober.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E269C78CE72F98B459DCE42061451A7 /* nsSBCSGroupProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsSBCSGroupProber.cpp; path = external/universalchardet/src/base/nsSBCSGroupProber.cpp; sourceTree = "<group>"; };
+		A46FB1DD3DA020465838FE8466F6F92C /* nsEUCTWProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsEUCTWProber.h; path = external/universalchardet/src/base/nsEUCTWProber.h; sourceTree = "<group>"; };
+		A4989C55CA79723B0CCB349E670182AF /* UniversalDetector.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UniversalDetector.xcconfig; sourceTree = "<group>"; };
+		AA744356A2F57AEF599870F2E84EFF37 /* Big5Freq.tab */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Big5Freq.tab; path = external/universalchardet/src/base/Big5Freq.tab; sourceTree = "<group>"; };
+		AE2B1CE78F083B67D2AF5BDF543915C3 /* nsEscCharsetProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsEscCharsetProber.h; path = external/universalchardet/src/base/nsEscCharsetProber.h; sourceTree = "<group>"; };
+		AE996A7AB856DE9339F22C68B7F61207 /* nsEscSM.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsEscSM.cpp; path = external/universalchardet/src/base/nsEscSM.cpp; sourceTree = "<group>"; };
+		AF755D729FCAFB94156BFD7ABEC3CF25 /* nscore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nscore.h; path = external/nscore.h; sourceTree = "<group>"; };
+		B2065E9F34C05DA5833AE84F8DD8D8FE /* LangBulgarianModel.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = LangBulgarianModel.cpp; path = external/universalchardet/src/base/LangBulgarianModel.cpp; sourceTree = "<group>"; };
+		B24B616E21814FAF42E2E8EB89DCBE2E /* UniversalDetector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UniversalDetector.h; path = UniversalDetector/UniversalDetector.h; sourceTree = "<group>"; };
+		B4AB255DA2D09A34D22A39C4036B6B87 /* uchardet.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = uchardet.cpp; path = external/uchardet.cpp; sourceTree = "<group>"; };
+		BAD374B7EFC0062103CB37F126870238 /* EUCTWFreq.tab */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EUCTWFreq.tab; path = external/universalchardet/src/base/EUCTWFreq.tab; sourceTree = "<group>"; };
+		C3E05096DFC56F96D382C4C2A7583B22 /* nsSJISProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsSJISProber.h; path = external/universalchardet/src/base/nsSJISProber.h; sourceTree = "<group>"; };
+		C48DD4F8EED6170B4EF057DA36EC5F1D /* UniversalDetector-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UniversalDetector-Info.plist"; sourceTree = "<group>"; };
+		C75B26DCA0B17C81B921D3BA4B142147 /* CharDistribution.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CharDistribution.h; path = external/universalchardet/src/base/CharDistribution.h; sourceTree = "<group>"; };
+		CB7B040F36C596DF2D78D6F4F49D8CA5 /* nsSJISProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsSJISProber.cpp; path = external/universalchardet/src/base/nsSJISProber.cpp; sourceTree = "<group>"; };
+		CC8C1044C91D71B4D8F5AA013F8C744F /* LangHungarianModel.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = LangHungarianModel.cpp; path = external/universalchardet/src/base/LangHungarianModel.cpp; sourceTree = "<group>"; };
+		CD20941142DFDA1857028AB4258EE3D7 /* nsEscCharsetProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsEscCharsetProber.cpp; path = external/universalchardet/src/base/nsEscCharsetProber.cpp; sourceTree = "<group>"; };
+		CE200E3101B0277C969725D3B3494C6B /* nsEUCKRProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsEUCKRProber.h; path = external/universalchardet/src/base/nsEUCKRProber.h; sourceTree = "<group>"; };
+		D200596A9E47B1B6F958BFE7CB305759 /* CharDistribution.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = CharDistribution.cpp; path = external/universalchardet/src/base/CharDistribution.cpp; sourceTree = "<group>"; };
+		D6D2AB373A0169D7F59A1A9754E3521E /* Pods_EncodingConverter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EncodingConverter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEEE804934B176C8F432B4CC1F7E01FD /* nsSBCSGroupProber.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsSBCSGroupProber.h; path = external/universalchardet/src/base/nsSBCSGroupProber.h; sourceTree = "<group>"; };
+		F305C227BCDA4DBED28396BCA9704336 /* nsPkgInt.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = nsPkgInt.h; path = external/universalchardet/src/base/nsPkgInt.h; sourceTree = "<group>"; };
+		F37F6F66C7D0608026984AA0D05AA864 /* Pods-EncodingConverter-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EncodingConverter-Info.plist"; sourceTree = "<group>"; };
+		F5E531C942113A5FBBCE82F8355956F0 /* nsEUCTWProber.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsEUCTWProber.cpp; path = external/universalchardet/src/base/nsEUCTWProber.cpp; sourceTree = "<group>"; };
+		F63F53E9E0C0E608D9D033FC39B5177D /* nsGB2312Prober.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = nsGB2312Prober.cpp; path = external/universalchardet/src/base/nsGB2312Prober.cpp; sourceTree = "<group>"; };
+		F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		F95363F36341DF523C368E1FDBEF9B5B /* UniversalDetector.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UniversalDetector.modulemap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		777CF2A3DF50D82D5EC82AA701502EE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66A2D7A4575C2C0375B7AB94F4B9AF96 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC49A4E9AE763B59F6C52C77B343682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B41ED0194E9331D9C24E44B78387D39 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D8449C0708C3C3AECABD035F826B13E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA744356A2F57AEF599870F2E84EFF37 /* Big5Freq.tab */,
+				788ECDADF3D541E71311F6C87114955F /* EUCKRFreq.tab */,
+				BAD374B7EFC0062103CB37F126870238 /* EUCTWFreq.tab */,
+				88C6CE18A746BA18D1730433A00B653A /* GB2312Freq.tab */,
+				248BED861F12A6B39D3A744B817394EE /* JISFreq.tab */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		32A098CFCA6CEB01A24F759DFA8E1CC5 /* UniversalDetector */ = {
+			isa = PBXGroup;
+			children = (
+				D200596A9E47B1B6F958BFE7CB305759 /* CharDistribution.cpp */,
+				C75B26DCA0B17C81B921D3BA4B142147 /* CharDistribution.h */,
+				517BDD64A388D98DB03524799A76081D /* JpCntx.cpp */,
+				29748C821C5096ADDCC770506C243E33 /* JpCntx.h */,
+				B2065E9F34C05DA5833AE84F8DD8D8FE /* LangBulgarianModel.cpp */,
+				6CBE2B79E9CAC9A0DE5A7128550F299B /* LangCyrillicModel.cpp */,
+				25EA5018521E29222485F15C3DC11923 /* LangGreekModel.cpp */,
+				60698E496849BDB48D9000AB2166C092 /* LangHebrewModel.cpp */,
+				CC8C1044C91D71B4D8F5AA013F8C744F /* LangHungarianModel.cpp */,
+				628BDE5BACAAE3E3575FAE918BACF460 /* LangThaiModel.cpp */,
+				351DD7E37A9A5CB2B32E661690579940 /* nsBig5Prober.cpp */,
+				106F30815F197D3A1245498F8AC796B1 /* nsBig5Prober.h */,
+				52F6A09045AF09D82E32C52ACE275422 /* nsCharSetProber.cpp */,
+				8E46F275ED9559C4839B0A1B4432C6BE /* nsCharSetProber.h */,
+				767DAE6E22CEE985EA5C47B6A75F2BAD /* nsCodingStateMachine.h */,
+				AF755D729FCAFB94156BFD7ABEC3CF25 /* nscore.h */,
+				CD20941142DFDA1857028AB4258EE3D7 /* nsEscCharsetProber.cpp */,
+				AE2B1CE78F083B67D2AF5BDF543915C3 /* nsEscCharsetProber.h */,
+				AE996A7AB856DE9339F22C68B7F61207 /* nsEscSM.cpp */,
+				1402576DE68D40C93D42C7E58105B44E /* nsEUCJPProber.cpp */,
+				75A0BB79B967C723FFC32E6117179F08 /* nsEUCJPProber.h */,
+				1A17F21177F4B22E69099A16C6DFEE6E /* nsEUCKRProber.cpp */,
+				CE200E3101B0277C969725D3B3494C6B /* nsEUCKRProber.h */,
+				F5E531C942113A5FBBCE82F8355956F0 /* nsEUCTWProber.cpp */,
+				A46FB1DD3DA020465838FE8466F6F92C /* nsEUCTWProber.h */,
+				F63F53E9E0C0E608D9D033FC39B5177D /* nsGB2312Prober.cpp */,
+				45D9301D1D08B2C8B1E86DAAF0E8D183 /* nsGB2312Prober.h */,
+				334690E467623F2FB12B2034334B77BE /* nsHebrewProber.cpp */,
+				7FF23980168B792C3AFADDB7788E93D4 /* nsHebrewProber.h */,
+				5A6C2C7A1A215249932B909994F51011 /* nsLatin1Prober.cpp */,
+				9C5ED9F5133CD45C714D1CD1B90AAE6F /* nsLatin1Prober.h */,
+				45118CF6476F0E82AEC5538F6AC783DB /* nsMBCSGroupProber.cpp */,
+				6728209AFF3A2189F3FA14CCF5560583 /* nsMBCSGroupProber.h */,
+				819478CDA04160E139204E7BD5EEB7C4 /* nsMBCSSM.cpp */,
+				F305C227BCDA4DBED28396BCA9704336 /* nsPkgInt.h */,
+				2FCB877AF914542F3C5D78710BD0876E /* nsSBCharSetProber.cpp */,
+				03E489A5324DDF792A1FEEB51FBC0A81 /* nsSBCharSetProber.h */,
+				9E269C78CE72F98B459DCE42061451A7 /* nsSBCSGroupProber.cpp */,
+				DEEE804934B176C8F432B4CC1F7E01FD /* nsSBCSGroupProber.h */,
+				CB7B040F36C596DF2D78D6F4F49D8CA5 /* nsSJISProber.cpp */,
+				C3E05096DFC56F96D382C4C2A7583B22 /* nsSJISProber.h */,
+				880C74A0FAD3A44F56DB292D0FCAA92A /* nsUniversalDetector.cpp */,
+				5176D9A68BE2A5A7BD9818C54C210B9D /* nsUniversalDetector.h */,
+				45A7E483A758617FF141BF0326F215DE /* nsUTF8Prober.cpp */,
+				5CC3FC01102B90276EBCF0779A40EC44 /* nsUTF8Prober.h */,
+				8F33E6FD6DDD50FB454078FF5719F404 /* prmem.h */,
+				8A25B4DE341A735FD6CE01D506007169 /* prtypes.h */,
+				B4AB255DA2D09A34D22A39C4036B6B87 /* uchardet.cpp */,
+				54B1FE4575367E9335E59112EA797369 /* uchardet.h */,
+				B24B616E21814FAF42E2E8EB89DCBE2E /* UniversalDetector.h */,
+				2A57A8B8672AAC05399D55689625013D /* UniversalDetector.m */,
+				0D8449C0708C3C3AECABD035F826B13E /* Resources */,
+				B837003D03E6A654FB2B6F32E3292814 /* Support Files */,
+			);
+			path = UniversalDetector;
+			sourceTree = "<group>";
+		};
+		60F75441F1EFF0FBF0F3EF3195300DD4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6D2AB373A0169D7F59A1A9754E3521E /* Pods_EncodingConverter.framework */,
+				63C505630E088AB1578C43545DE43E5B /* UniversalDetector.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACF9015DB13588BA4C4A3E1FB25701F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32A098CFCA6CEB01A24F759DFA8E1CC5 /* UniversalDetector */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B837003D03E6A654FB2B6F32E3292814 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F95363F36341DF523C368E1FDBEF9B5B /* UniversalDetector.modulemap */,
+				A4989C55CA79723B0CCB349E670182AF /* UniversalDetector.xcconfig */,
+				57F3E940BDA8BDD1E36EAF587AD75636 /* UniversalDetector-dummy.m */,
+				C48DD4F8EED6170B4EF057DA36EC5F1D /* UniversalDetector-Info.plist */,
+				0ADBD451D97AAC61746DC3B9F8D1F2E7 /* UniversalDetector-prefix.pch */,
+				43572D018540B4685FFC22255CD67298 /* UniversalDetector-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UniversalDetector";
+			sourceTree = "<group>";
+		};
+		CBD43E0947D94E318A0ED1350CFF29ED /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				F940C819049CFF8741C0F5E3E075E607 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */,
+				ACF9015DB13588BA4C4A3E1FB25701F5 /* Pods */,
+				60F75441F1EFF0FBF0F3EF3195300DD4 /* Products */,
+				F63CA095BBFE7E88E37E7B14429C2B81 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E0A1E60606E0BF6E2E10F1F01350DFE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBD43E0947D94E318A0ED1350CFF29ED /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F63CA095BBFE7E88E37E7B14429C2B81 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB685005DC957846C505D0D1B1FDA417 /* Pods-EncodingConverter */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		FB685005DC957846C505D0D1B1FDA417 /* Pods-EncodingConverter */ = {
+			isa = PBXGroup;
+			children = (
+				51A022459759D4E22401766A04ECD3E0 /* Pods-EncodingConverter.modulemap */,
+				8F6B8D0BBDBF5F8E63EE328E72046D11 /* Pods-EncodingConverter-acknowledgements.markdown */,
+				3F79B80DA969C5F2C671080C1DB36F52 /* Pods-EncodingConverter-acknowledgements.plist */,
+				19059FEB6D1415B6807396522D2DE810 /* Pods-EncodingConverter-dummy.m */,
+				7197D8B56F60D6297F00166D08E45F7E /* Pods-EncodingConverter-frameworks.sh */,
+				F37F6F66C7D0608026984AA0D05AA864 /* Pods-EncodingConverter-Info.plist */,
+				8A8A0DE58502094BCC8077BE709BAA50 /* Pods-EncodingConverter-umbrella.h */,
+				9134AD80CE14967BF099D768B5FD523C /* Pods-EncodingConverter.debug.xcconfig */,
+				97FC2410AF858C9ACA724FA72199BF3C /* Pods-EncodingConverter.release.xcconfig */,
+			);
+			name = "Pods-EncodingConverter";
+			path = "Target Support Files/Pods-EncodingConverter";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		031CEFFB6DE0CFE395A29E3CDA633A41 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D12BA7B46A00226CBE0A26320D72B647 /* Pods-EncodingConverter-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B540D018352E648EF77A7CDA22F298 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAB151505080248BF043F841FFB02124 /* CharDistribution.h in Headers */,
+				747BED29F17D0C2DBB672E2766BDE85D /* JpCntx.h in Headers */,
+				A6F34DFB853198F8713CB96AF980A292 /* nsBig5Prober.h in Headers */,
+				A3841C51D824324048ED81DAA1C72E02 /* nsCharSetProber.h in Headers */,
+				AE83A23BCB83D41DFE24D34EDDD3A810 /* nsCodingStateMachine.h in Headers */,
+				A28C29FDDEAE49AA5BB8CFF894419187 /* nscore.h in Headers */,
+				9DEE6D860D6DE1B6B76C879530D2D339 /* nsEscCharsetProber.h in Headers */,
+				3431C18F336D4BF7C108C9D96FE3D864 /* nsEUCJPProber.h in Headers */,
+				61899E128EDC5FF152F159631C5CDB81 /* nsEUCKRProber.h in Headers */,
+				B4EB2B20FE38EDE6D89DC3356FFD2139 /* nsEUCTWProber.h in Headers */,
+				4DEB0D6C721EC2E509694B07BE24D70D /* nsGB2312Prober.h in Headers */,
+				164FBF8AB4A4AF76BF46F318C240B97E /* nsHebrewProber.h in Headers */,
+				7E9F6716ECC10D49B0846D33EC9B807F /* nsLatin1Prober.h in Headers */,
+				9BCFEA4B36C1D7914B7C3C43CA913137 /* nsMBCSGroupProber.h in Headers */,
+				6D4CB19960A326B970A3CC875E4C9872 /* nsPkgInt.h in Headers */,
+				5FB594ED60BFA264AA794B6EC109877E /* nsSBCharSetProber.h in Headers */,
+				64F8F5515D19849A3DD1DBDC4F1B0E89 /* nsSBCSGroupProber.h in Headers */,
+				74943F945038E0580FF3642014E027BA /* nsSJISProber.h in Headers */,
+				4F33B92DF8BB6721A927C4DAE8A960F9 /* nsUniversalDetector.h in Headers */,
+				391529804B89C5CE10CD36BD40CB215D /* nsUTF8Prober.h in Headers */,
+				AA759AD5DD63D81074F522FB17B3F063 /* prmem.h in Headers */,
+				363FB9C791AA7FA6CDD4697826C0E33A /* prtypes.h in Headers */,
+				CE1C547D81F52CEFEB72F2EF7CDB7705 /* uchardet.h in Headers */,
+				398E2E13DB7204EF8B288498D8265081 /* UniversalDetector-umbrella.h in Headers */,
+				E462E0E0BDF5EAC2808EAC0E25344FD4 /* UniversalDetector.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3EBBB03D5A211DA29C3275568ADFBA82 /* Pods-EncodingConverter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CE21A60A5941BF7164A77AC6E099CB3 /* Build configuration list for PBXNativeTarget "Pods-EncodingConverter" */;
+			buildPhases = (
+				031CEFFB6DE0CFE395A29E3CDA633A41 /* Headers */,
+				481DD80E7C9C7B594994291E57123729 /* Sources */,
+				9CC49A4E9AE763B59F6C52C77B343682 /* Frameworks */,
+				5E7BFC296E6F70655F15B648B8C94E66 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CDBF9934C02B55995D0516C248E90DD /* PBXTargetDependency */,
+			);
+			name = "Pods-EncodingConverter";
+			productName = "Pods-EncodingConverter";
+			productReference = D6D2AB373A0169D7F59A1A9754E3521E /* Pods_EncodingConverter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C8A6569ECB3F3DF926DB6277FA6EE4C3 /* UniversalDetector */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC2DD7E6CEFD0719F0859A266FD1728 /* Build configuration list for PBXNativeTarget "UniversalDetector" */;
+			buildPhases = (
+				70B540D018352E648EF77A7CDA22F298 /* Headers */,
+				CB973A498F74303AD2F53AB3C834DB43 /* Sources */,
+				777CF2A3DF50D82D5EC82AA701502EE8 /* Frameworks */,
+				DABB5E61FC9861F1C11FC1012045CC3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UniversalDetector;
+			productName = UniversalDetector;
+			productReference = 63C505630E088AB1578C43545DE43E5B /* UniversalDetector.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1140;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 60F75441F1EFF0FBF0F3EF3195300DD4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EBBB03D5A211DA29C3275568ADFBA82 /* Pods-EncodingConverter */,
+				C8A6569ECB3F3DF926DB6277FA6EE4C3 /* UniversalDetector */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5E7BFC296E6F70655F15B648B8C94E66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DABB5E61FC9861F1C11FC1012045CC3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADD87C50DFABCC587F2DFF8A36E610B0 /* Big5Freq.tab in Resources */,
+				149DB568168F8FB7FC0B5B0A865AE9EC /* EUCKRFreq.tab in Resources */,
+				85EAD5A651EC1E0D9534995F04A394F4 /* EUCTWFreq.tab in Resources */,
+				093732E2880A3095B78A1EAE08A1A377 /* GB2312Freq.tab in Resources */,
+				C0253165D5B84A7D658C4D9C95C383B2 /* JISFreq.tab in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		481DD80E7C9C7B594994291E57123729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0645027803C075AEDC1E3852A8B8985F /* Pods-EncodingConverter-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB973A498F74303AD2F53AB3C834DB43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6952B808CA4FB0A97D35DC8486C485EB /* CharDistribution.cpp in Sources */,
+				1A07EDA741C7605DBC40F4F9BD2E398F /* JpCntx.cpp in Sources */,
+				12B1AB31E2D2A6D6E70F4F8566DF7E3D /* LangBulgarianModel.cpp in Sources */,
+				B0F9CF00C5F7E00F6DB3E7C85FA79A65 /* LangCyrillicModel.cpp in Sources */,
+				DDFF5D06B4E1A5CDAEB5E2EAD41EE1E7 /* LangGreekModel.cpp in Sources */,
+				43296ED97E690F3849B540C24CDB92F1 /* LangHebrewModel.cpp in Sources */,
+				74FB09F77EA1E78DF3A737E7F506083A /* LangHungarianModel.cpp in Sources */,
+				4DFC73ADD3E4F26DA8C344AF22025114 /* LangThaiModel.cpp in Sources */,
+				0196DEAD5257F583E1220D3F552BB964 /* nsBig5Prober.cpp in Sources */,
+				E12235B116A362C792D32ACF2C2C1848 /* nsCharSetProber.cpp in Sources */,
+				68A246BFC7764C128E184AF955CE3C27 /* nsEscCharsetProber.cpp in Sources */,
+				79121686D434374CFF0C94A779332F92 /* nsEscSM.cpp in Sources */,
+				217A6A73E80E8AB53477E6F023BB3728 /* nsEUCJPProber.cpp in Sources */,
+				B79F4B40B9AF71C52DDDDF4D153B0D30 /* nsEUCKRProber.cpp in Sources */,
+				2CF1B02545F93C67C12917514A94C647 /* nsEUCTWProber.cpp in Sources */,
+				F63EBCA3B92ADFFA6E9E00B76CDBFA95 /* nsGB2312Prober.cpp in Sources */,
+				E04F3F677AFCDA875329A2244CF250F4 /* nsHebrewProber.cpp in Sources */,
+				ACC5771E8B0BBBB9EEE7B8A6AD35832B /* nsLatin1Prober.cpp in Sources */,
+				54DEEBA22778555C47365B68262A5B7B /* nsMBCSGroupProber.cpp in Sources */,
+				A3334BE1F69578C98DDF9B65EC348058 /* nsMBCSSM.cpp in Sources */,
+				10304E31582D1B329F384272040B548A /* nsSBCharSetProber.cpp in Sources */,
+				477C08CC658DD43D2A2A94D5F3C822DA /* nsSBCSGroupProber.cpp in Sources */,
+				35FF0601906F0AA044CBE865AE488242 /* nsSJISProber.cpp in Sources */,
+				3643C1E3FE65441E30E4A21BBC749592 /* nsUniversalDetector.cpp in Sources */,
+				31D0DAFAA92B890541F715D6FB8EEF1C /* nsUTF8Prober.cpp in Sources */,
+				DAC52A0E5CC0599FECC8F3442F49CB80 /* uchardet.cpp in Sources */,
+				1BDEDE9FDF43BF364B483C6C336355E3 /* UniversalDetector-dummy.m in Sources */,
+				A0C6CBDC5944C6A6A15112F4B30564D8 /* UniversalDetector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CDBF9934C02B55995D0516C248E90DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UniversalDetector;
+			target = C8A6569ECB3F3DF926DB6277FA6EE4C3 /* UniversalDetector */;
+			targetProxy = 050A6C4B8D4B6F6AD0CA73C076FA2001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0253CCDEE11BB2E876CF8C6EBDC6E1A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2A91683C40549D8CAEE397DF2B170867 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97FC2410AF858C9ACA724FA72199BF3C /* Pods-EncodingConverter.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-EncodingConverter/Pods-EncodingConverter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MODULEMAP_FILE = "Target Support Files/Pods-EncodingConverter/Pods-EncodingConverter.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		40D86191319006AE863A63B4CD6F1B1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4989C55CA79723B0CCB349E670182AF /* UniversalDetector.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/UniversalDetector/UniversalDetector-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UniversalDetector/UniversalDetector-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MODULEMAP_FILE = "Target Support Files/UniversalDetector/UniversalDetector.modulemap";
+				PRODUCT_MODULE_NAME = UniversalDetector;
+				PRODUCT_NAME = UniversalDetector;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6DC6BBF7D2A721A4E91A75A28EEB8E83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		F6906E55795CE32E5DF9F1FFE573C398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4989C55CA79723B0CCB349E670182AF /* UniversalDetector.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_PREFIX_HEADER = "Target Support Files/UniversalDetector/UniversalDetector-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UniversalDetector/UniversalDetector-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MODULEMAP_FILE = "Target Support Files/UniversalDetector/UniversalDetector.modulemap";
+				PRODUCT_MODULE_NAME = UniversalDetector;
+				PRODUCT_NAME = UniversalDetector;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F6E2527DE2D63031436EBFE1CE31B8A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9134AD80CE14967BF099D768B5FD523C /* Pods-EncodingConverter.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-EncodingConverter/Pods-EncodingConverter-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MODULEMAP_FILE = "Target Support Files/Pods-EncodingConverter/Pods-EncodingConverter.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6DC6BBF7D2A721A4E91A75A28EEB8E83 /* Debug */,
+				0253CCDEE11BB2E876CF8C6EBDC6E1A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CE21A60A5941BF7164A77AC6E099CB3 /* Build configuration list for PBXNativeTarget "Pods-EncodingConverter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6E2527DE2D63031436EBFE1CE31B8A7 /* Debug */,
+				2A91683C40549D8CAEE397DF2B170867 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC2DD7E6CEFD0719F0859A266FD1728 /* Build configuration list for PBXNativeTarget "UniversalDetector" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6906E55795CE32E5DF9F1FFE573C398 /* Debug */,
+				40D86191319006AE863A63B4CD6F1B1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
