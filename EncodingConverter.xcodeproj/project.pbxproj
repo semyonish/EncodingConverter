@@ -21,6 +21,8 @@
 		C1F13030247AA30E0069874C /* FileMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F1302F247AA30E0069874C /* FileMetadata.swift */; };
 		C1F13032247AA57F0069874C /* BOMProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F13031247AA57F0069874C /* BOMProcessor.swift */; };
 		C1F13042247AA7340069874C /* BOMProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F13041247AA7340069874C /* BOMProcessingTests.swift */; };
+		C1FA2C33247D6082001A86A0 /* EncodingConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FA2C32247D6082001A86A0 /* EncodingConversionTests.swift */; };
+		C1FA2C35247D60A3001A86A0 /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FA2C34247D60A3001A86A0 /* TestBase.swift */; };
 		DCD9B07326116B492F611A10 /* Pods_EncodingConverter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84733918D0085ED5A675951C /* Pods_EncodingConverter.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		C1F13037247AA6FA0069874C /* EncodingConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EncodingConverterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1F1303B247AA6FA0069874C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1F13041247AA7340069874C /* BOMProcessingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BOMProcessingTests.swift; sourceTree = "<group>"; };
+		C1FA2C32247D6082001A86A0 /* EncodingConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodingConversionTests.swift; sourceTree = "<group>"; };
+		C1FA2C34247D60A3001A86A0 /* TestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 		C1F13038247AA6FA0069874C /* EncodingConverterTests */ = {
 			isa = PBXGroup;
 			children = (
+				C1FA2C34247D60A3001A86A0 /* TestBase.swift */,
+				C1FA2C32247D6082001A86A0 /* EncodingConversionTests.swift */,
 				C193FD67247BE90800D9E430 /* EncodingDetectionTests.swift */,
 				C1F13041247AA7340069874C /* BOMProcessingTests.swift */,
 				C1F1303B247AA6FA0069874C /* Info.plist */,
@@ -307,8 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1FA2C35247D60A3001A86A0 /* TestBase.swift in Sources */,
 				C1F13042247AA7340069874C /* BOMProcessingTests.swift in Sources */,
 				C193FD68247BE90800D9E430 /* EncodingDetectionTests.swift in Sources */,
+				C1FA2C33247D6082001A86A0 /* EncodingConversionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

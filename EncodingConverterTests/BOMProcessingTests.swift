@@ -9,46 +9,7 @@
 import XCTest
 @testable import EncodingConverter
 
-class BOMProcessingTests: XCTestCase {
-    
-    let BOMString = "\u{FEFF}"
-    
-    func temporaryFileURL() -> URL {
-        
-        // Create a URL for an unique file in the system's temporary directory.
-        let directory = NSTemporaryDirectory()
-        let filename = UUID().uuidString
-        let fileURL = URL(fileURLWithPath: directory).appendingPathComponent(filename)
-        
-        // Add a teardown block to delete any file at `fileURL`.
-        addTeardownBlock {
-            do {
-                let fileManager = FileManager.default
-                // Check that the file exists before trying to delete it.
-                if fileManager.fileExists(atPath: fileURL.path) {
-                    // Perform the deletion.
-                    try fileManager.removeItem(at: fileURL)
-                    // Verify that the file no longer exists after the deletion.
-                    XCTAssertFalse(fileManager.fileExists(atPath: fileURL.path))
-                }
-            } catch {
-                // Treat any errors during file deletion as a test failure.
-                XCTFail("Error while deleting temporary file: \(error)")
-            }
-        }
-        
-        // Return the temporary file URL for use in a test method.
-        return fileURL
-        
-    }
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+class BOMProcessingTests: TestBase {
 
     func testAddingBomToFileContainedBOM() throws {
         let fileURL = temporaryFileURL()

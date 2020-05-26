@@ -56,7 +56,11 @@ class FileEncoder {
             return BOMProcessor.removeBOM(from: file)
             
         case (.utf8withBOM, _):
-            return encode(file: file, to: .utf8) && encode(file: file, to: newEncoding)
+            let result = encode(file: file, to: .utf8) && encode(file: file, to: newEncoding)
+            if !result {
+                encode(file: file, to: oldEncoding)
+            }
+            return result
         
         case (_, .utf8withBOM):
             return encode(file: file, to: .utf8) && encode(file: file, to: .utf8withBOM)
