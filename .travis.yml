@@ -1,5 +1,4 @@
+language: swift
 os: osx
 osx_image: xcode12
-
-xcodebuild clean -workspace EncodingConverter.xcworkspace -scheme EncodingConverter
-xcodebuild test -workspace EncodingConverter.xcworkspace -scheme EncodingConverter
+script: xcodebuild test -workspace EncodingConverter.xcworkspace -scheme EncodingConverter
